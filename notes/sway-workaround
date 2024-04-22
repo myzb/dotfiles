@@ -1,0 +1,93 @@
+# wlroots workaround
+
+diff --git a/backend/backend.c b/backend/backend.c
+index bfb43ba0..909ce40f 100644
+--- a/backend/backend.c
++++ b/backend/backend.c
+@@ -223,7 +223,8 @@ static struct wlr_backend *attempt_drm_backend(struct wl_display *display,
+        struct wlr_backend *primary_drm = NULL;
+        for (size_t i = 0; i < (size_t)num_gpus; ++i) {
+                struct wlr_backend *drm = wlr_drm_backend_create(display, session,
+-                       gpus[i], primary_drm);
++                       // HACK: fix displaylink to recognized multiple displays
++                       gpus[i], NULL);
+                if (!drm) {
+                        wlr_log(WLR_ERROR, "Failed to create DRM backend");
+                        continue;
+
+
+# packages
+sudo apt install sway swayidle swaybg xdg-desktop-portal-wlr xwayland
+sudo apt install sway swayidle swaybg xdg-desktop-portal-wlr
+sudo apt install wofi waybar
+sudo apt install fonts-font-awesome
+sudo apt install fonts-font-awesome
+sudo apt install meson
+apt install wayland-protocols
+sudo apt install wayland-protocols
+sudo apt install pkg-config
+sudo apt install wayland-server
+sudo apt install wayland
+sudo apt install libwayland-dev
+sudo apt install wayland-dev
+sudo apt install gbm
+sudo apt install libgbm-dev
+sudo apt install xkbcommon
+sudo apt install libxkbcommon-dev
+sudo apt install libudev
+sudo apt install libudev-dev
+sudo apt install libpixman-1-dev
+sudo apt install libseat-dev
+sudo apt install libseat-dev
+sudo apt install libseat
+sudo apt install libinput-dev libegl-dev
+sudo apt install libvulkan-dev
+sudo apt install libgles2-dev
+sudo apt install glesv2-dev
+sudo apt install libglesv2-mesa-dev
+sudo apt install libgles2-mesa-dev
+sudo apt install glslang-dev
+sudo apt install glslang-tools
+sudo apt install libxcb-dri3-dev
+sudo apt install libxcb-present-dev
+sudo apt install xcb-util-renderutil
+sudo apt install libxcb-util-dev
+sudo apt install libxcb-render-util0-dev
+sudo apt install libxcb-shm0-dev
+sudo apt install libxcb-xinput0-dev
+sudo apt install libxcb-xinput-dev
+sudo apt install libseat-dev
+sudo apt install libseat
+sudo apt install libseat-dev
+sudo apt install seatd
+sudo apt install libsystemd-dev
+sudo apt install libpng-dev
+sudo apt install libxcb-composite0-dev
+sudo apt install libxcb-icccm4-dev
+sudo apt install libxcb-res0-dev
+sudo apt install xcv-util
+sudo apt install xcv-util
+sudo apt install xcb-util
+sudo apt install libxcb-util-dev
+sudo apt install libavutil-dev libavcodec-dev libavformat-dev
+sudo apt install libwayland-dev
+sudo apt install libxcb-dev
+sudo apt install libxcb1-dev
+sudo apt install libxcb-ewmh-dev
+sudo apt install libxcb-render-util0-dev
+sudo apt install libxcb-util0-dev
+sudo apt install libxcb-util-dev
+sudo apt install libxcb1-dev
+sudo ninja -C build/ install
+sudo apt autoremove
+sudo apt autoremove
+sudo apt autoremove fonts-font-awesome
+sudo apt autoremove
+sudo apt autoremove fonts-font-awesome
+sudo apt autoremove glslang-dev
+sudo apt autoremove libxcb-util-dev
+sudo apt autoremove libseat-dev
+sudo apt autoremove seatd
+sudo apt autoremove libsystemd-dev
+sudo apt autoremove libsystemd
+sudo apt autoremove libxcb-util-dev
