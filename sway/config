@@ -225,6 +225,7 @@ bar swaybar_command waybar
 
 # Window and borders
 default_border none
+default_floating_border none
 
 # Windows gaps
 gaps inner 15
