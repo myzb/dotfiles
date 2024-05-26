@@ -17,4 +17,4 @@ pacman -S zsh zoxide fzf man
 pacman -S neovim ttf-jetbrains-mono-nerd fd ripgrep
 
 ### tmux
-pacman -S tmux
+pacman -S tmux inetutils

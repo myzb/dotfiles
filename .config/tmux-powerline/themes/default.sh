@@ -88,7 +88,7 @@ fi
 # shellcheck disable=SC1143,SC2128
 if [ -z "$TMUX_POWERLINE_LEFT_STATUS_SEGMENTS" ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
-		#"tmux_session_info 148 234"
+		"tmux_session_info 148 234"
 		"hostname #bf616a #2e3444"
 		#"mode_indicator 165 0"
 		#"ifstat 30 255"
