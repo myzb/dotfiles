@@ -124,8 +124,8 @@ if [ -z "$TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS" ]; then
 		#"rainbarf 0 ${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR}"
 		#"xkb_layout 125 117"
 		#"date_day 235 136"
-		"date color0 color7 ${TMUX_POWERLINE_SEPARATOR_LEFT_BOLD}"
-		"time color0 color7 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
+		"time color0 color7 ${TMUX_POWERLINE_SEPARATOR_LEFT_BOLD}"
+		"date color0 color7 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
 		"hostname color6 color0"
 		#"utc_time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
 	)
