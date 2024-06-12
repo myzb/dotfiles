@@ -49,7 +49,7 @@ fi
 # shellcheck disable=SC2128
 if [ -z "$TMUX_POWERLINE_WINDOW_STATUS_FORMAT" ]; then
 	TMUX_POWERLINE_WINDOW_STATUS_FORMAT=(
-		"#[$(format inverse),bg=#3b4252]"
+		"#[$(format inverse),bg=color0]"
 		"$TMUX_POWERLINE_DEFAULT_LEFTSIDE_SEPARATOR"
 		"#[$(format regular),bg=color0]"
 		"  #I#{?window_flags,#F, } "
@@ -92,7 +92,7 @@ fi
 # shellcheck disable=SC1143,SC2128
 if [ -z "$TMUX_POWERLINE_LEFT_STATUS_SEGMENTS" ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
-		"tmux_session_info #88c0d0 #3b4252"
+		"tmux_session_info color6 color0"
 		#"mode_indicator 165 0"
 		#"ifstat 30 255"
 		#"ifstat_sys 30 255"
@@ -124,9 +124,9 @@ if [ -z "$TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS" ]; then
 		#"rainbarf 0 ${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR}"
 		#"xkb_layout 125 117"
 		#"date_day 235 136"
-		"date #3b4252 #d8dee9 ${TMUX_POWERLINE_SEPARATOR_LEFT_BOLD}"
-		"time #3b4252 #d8dee9 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
-		"hostname #88c0d0 #3b4252"
+		"date color0 color7 ${TMUX_POWERLINE_SEPARATOR_LEFT_BOLD}"
+		"time color0 color7 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
+		"hostname color6 color0"
 		#"utc_time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
 	)
 fi
