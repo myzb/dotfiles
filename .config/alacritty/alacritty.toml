@@ -50,7 +50,7 @@ mouse = "Middle"
 program = "/bin/zsh"
 
 [window]
-decorations = "Full"
+# decorations = "None"
 dynamic_title = true
 startup_mode = "Windowed"
 decorations_theme_variant = "Dark"
