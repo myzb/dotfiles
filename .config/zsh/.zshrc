@@ -39,21 +39,21 @@ autoload -Uz compinit && compinit
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'				# case insensitive
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"				# ls-style autocomplete colors
-zstyle ':completion:*' menu no
-zstyle ':completion::complete:*' gain-privileges 1  				# enable for sudo cmds
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'		
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':completion:*' menu no							# will use fzf menu
+zstyle ':completion::complete:*' gain-privileges 1				# enable for sudo cmds
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'		# fzf colors
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'	# fzf colors
 
 # History
-HISTFILE="$ZDOTDIR/.zhistory"   	# history filepath
-HISTSIZE=5000           	        # maximum events for internal history
-SAVEHIST=$HISTSIZE	           	# maximum events in history file
+HISTFILE="$ZDOTDIR/.zhistory"		# history filepath
+HISTSIZE=5000				# maximum events for internal history
+SAVEHIST=$HISTSIZE			# maximum events in history file
 HISTDUP=erase				# erase dupes
 setopt appendhistory			# append instead of overwriting
 setopt sharehistory			# share across session
 setopt hist_ignore_space		# ignore commands with leading space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
+setopt hist_ignore_all_dups		# handing of duplicates
+setopt hist_save_no_dups		# ...
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
@@ -63,8 +63,8 @@ autoload -Uz run-help
 alias help=run-help
 
 # Shell integrations
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(fzf --zsh)"			# fzf in zsh
+eval "$(zoxide init --cmd cd zsh)"	# zoxide instead of cd
 
 # Keybinds
 bindkey -e
@@ -72,6 +72,7 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # Keybinds for special keys
+# see, https://wiki.archlinux.org/title/zsh#Configure_Zsh
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
