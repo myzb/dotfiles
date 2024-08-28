@@ -14,18 +14,15 @@ return {
 				suggestions = 20,
 			}
 		},
-		ignore_missing = false,
 	},
 	config = function(_, opts)
 		local wk = require("which-key")
 		wk.setup(opts)
-		wk.register({
-			b = { name = "Buffers" },
-			f = { name = "Find" },
-			l = { name = "LSP" },
-		}, { prefix = "<leader>" })
-		wk.register({
-			g = { name = "Go" },
+		wk.add({
+			-- { "<leader>b", desc = "Buffers"},
+			-- { "<leader>f", desc = "Find" },
+			-- { "<leader>l", desc = "LSP" },
+			-- { "g", group = "Go" },
 		})
 	end,
 }
