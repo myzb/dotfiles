@@ -1,6 +1,6 @@
 return {
-	{   "nvim-treesitter/nvim-treesitter-context",
-		event = "VeryLazy",
+	{
+		"nvim-treesitter/nvim-treesitter-context",
 		opts = { mode = "cursor", max_lines = 1 },
 	},
 	{
@@ -11,11 +11,12 @@ return {
 		build = ":TSUpdate",
 		opts = {
 			ensure_installed = {
-				-- default needed
-				"c", "lua", "vim", "vimdoc", "query",
-
-				-- extras required by noice.nvim
-				-- "regex", "bash", "markdown", "markdown_inline",
+				-- Default needed
+				"c",
+				"lua",
+				"vim",
+				"vimdoc",
+				"query",
 			},
 			sync_install = false,
 			auto_install = true,

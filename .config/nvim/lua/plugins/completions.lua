@@ -1,7 +1,6 @@
 return {
 	{
 		"ray-x/lsp_signature.nvim",
-		event = "VeryLazy",
 		opts = {
 			hint_enable = false,
 			doc_lines = 0,
@@ -13,19 +12,34 @@ return {
 		end,
 	},
 	{
+		-- autocomplete braces, brackets, ...
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {
+			check_ts = true,
+		},
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		lazy = true,
+		build = "make install_jsregexp",
+	},
+	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
-			-- completion sources
+			-- Completion sources
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-cmdline",
+			"hrsh7th/cmp-path",
 			"windwp/nvim-autopairs",
 
-			-- snipped support
+			-- Snipped support
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
 
-			-- icons
+			-- Icons
 			"onsails/lspkind.nvim",
 		},
 		event = { "InsertEnter", "CmdlineEnter" },
@@ -38,9 +52,9 @@ return {
 
 			cmp.setup({
 				enabled = function()
-					-- disable completion in comments
+					-- Disable completion in comments
 					local context = require("cmp.config.context")
-					-- keep command mode completion enabled when cursor is in a comment
+					-- Keep command mode completion enabled when cursor is in a comment
 					if vim.api.nvim_get_mode().mode == "c" then
 						return true
 					else
@@ -55,13 +69,14 @@ return {
 				formatting = {
 					format = lspkind.cmp_format({
 						mode = "symbol_text",
-						menu = ({
+						menu = {
 							buffer = "[Buffer]",
 							nvim_lsp = "[LSP]",
 							luasnip = "[LuaSnip]",
 							nvim_lua = "[Lua]",
 							latex_symbols = "[Latex]",
-						})
+							lazydev = "[Lazydev]",
+						},
 					}),
 				},
 				mapping = cmp.mapping.preset.insert({
@@ -75,7 +90,7 @@ return {
 					-- Safe-CR
 					-- If nothing is selected (including preselections) add a newline as usual.
 					-- If something has explicitly been selected by the user, select it.
-					['<CR>'] = cmp.mapping({
+					["<CR>"] = cmp.mapping({
 						i = function(fallback)
 							if cmp.visible() and cmp.get_active_entry() then
 								cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
@@ -108,10 +123,11 @@ return {
 				}),
 
 				sources = cmp.config.sources({
-					{ name = "nvim_lsp", keyword_length = 2},
-					{ name = "luasnip" , keyword_length = 2},
+					{ name = "lazydev", group_index = 0 },
+					{ name = "nvim_lsp", keyword_length = 2 },
+					{ name = "luasnip", keyword_length = 2 },
 				}, {
-					{ name = "buffer" , keyword_length = 3 },
+					{ name = "buffer", keyword_length = 3 },
 				}),
 				matching = {
 					-- disallow_fuzzy_matching = true,
@@ -121,25 +137,24 @@ return {
 					ghost_text = true,
 				},
 			})
-
-			-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-			cmp.setup.cmdline({ '/', '?' }, {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = {
-					{ name = 'buffer' }
-				}
-			})
-
-			-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-			cmp.setup.cmdline(':', {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = cmp.config.sources({
-					{ name = 'path' }
-				}, {
-					{ name = 'cmdline' }
-				}),
-				matching = { disallow_symbol_nonprefix_matching = false }
-			})
+			-- Command line completions for '/' and '?'
+			-- cmp.setup.cmdline({ "/", "?" }, {
+			-- 	mapping = cmp.mapping.preset.cmdline(),
+			-- 	sources = {
+			-- 		{ name = "buffer" },
+			-- 	},
+			-- })
+			--
+			-- -- Command line completions for ':'
+			-- cmp.setup.cmdline(":", {
+			-- 	mapping = cmp.mapping.preset.cmdline(),
+			-- 	sources = cmp.config.sources({
+			-- 		{ name = "path" },
+			-- 	}, {
+			-- 		{ name = "cmdline" },
+			-- 	}),
+			-- 	matching = { disallow_symbol_nonprefix_matching = false },
+			-- })
 
 			-- autocompletion for '()' in function/methods
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")

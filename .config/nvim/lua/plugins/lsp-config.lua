@@ -1,7 +1,6 @@
 return {
 	{
-		-- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
-		-- used for completion, annotations and signatures of Neovim apis
+		-- Setup lua_ls for neovim plugin config/development
 		"folke/lazydev.nvim",
 		ft = "lua",
 		opts = {
@@ -18,10 +17,9 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			-- lsp manager
+			-- Lsp manager
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 			-- Useful status updates for LSP.
 			{ "j-hui/fidget.nvim", opts = {} },
@@ -32,7 +30,30 @@ return {
 		},
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
-			-- lsp diagnostics as hint icons in sign-column
+			-- Setup lsp's handlers
+			local lspconfig = require("lspconfig")
+			local mason_lspconfig = require("mason-lspconfig")
+
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+			mason_lspconfig.setup_handlers({
+				-- Default handler
+				function(server_name)
+					lspconfig[server_name].setup({
+						capabilities = capabilities,
+					})
+				end,
+				-- Special handlers
+				["clangd"] = function()
+					lspconfig["clangd"].setup({
+						capabilities = capabilities,
+						cmd = { "clangd", "--fallback-style=webkit" },
+					})
+				end,
+			})
+
+			-- Lsp diagnostics as hint icons in sign-column
 			local signs = {
 				{ name = "DiagnosticSignError", text = "" },
 				{ name = "DiagnosticSignWarn", text = "" },
@@ -46,8 +67,7 @@ return {
 					numhl = "",
 				})
 			end
-
-			local config = {
+			vim.diagnostic.config({
 				virtual_text = false,
 				signs = {
 					active = signs,
@@ -63,10 +83,9 @@ return {
 					header = "",
 					prefix = "",
 				},
-			}
-			vim.diagnostic.config(config)
+			})
 
-			-- add borders to windows that normally don't have
+			-- Borders around windows that normally don't have
 			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 				border = "rounded",
 			})
@@ -74,40 +93,7 @@ return {
 				border = "rounded",
 			})
 
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
-			-- define setup func
-			local default_setup = function(server_name)
-				local conf = {
-					capabilities = capabilities,
-				}
-
-				if server_name == "clangd" then
-					conf.cmd = { "clangd", "--fallback-style=webkit" }
-				end
-
-				require("lspconfig")[server_name].setup(conf)
-			end
-
-			-- manually setup lsp's not handled by mason
-			local lsp_provider = { "pyright" }
-
-			for _, name in pairs(lsp_provider) do
-				default_setup(name)
-			end
-
-			-- automatically setup lsp's that can be handled by mason
-			require("mason").setup()
-			require("mason-lspconfig").setup({
-				ensure_installed = { "clangd", "lua_ls" },
-				handlers = {
-					default_setup,
-				},
-			})
-
-			-- Use LspAttach autocommand to only map the following keys
-			-- after the language server attaches to the current buffer
+			-- Lsp keypmaps
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(event)
