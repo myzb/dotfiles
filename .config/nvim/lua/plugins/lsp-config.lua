@@ -1,20 +1,5 @@
 return {
 	{
-		-- Setup lua_ls for neovim plugin config/development
-		"folke/lazydev.nvim",
-		ft = "lua",
-		opts = {
-			library = {
-				-- Load luvit types when the `vim.uv` word is found
-				{ path = "luvit-meta/library", words = { "vim%.uv" } },
-			},
-		},
-	},
-	{
-		"Bilal2453/luvit-meta",
-		lazy = true,
-	},
-	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			-- Lsp manager
@@ -78,7 +63,7 @@ return {
 				float = {
 					focusable = false,
 					style = "minimal",
-					border = "rounded",
+					border = "none",
 					source = true,
 					header = "",
 					prefix = "",
@@ -87,10 +72,10 @@ return {
 
 			-- Borders around windows that normally don't have
 			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-				border = "rounded",
+				border = "none",
 			})
 			vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-				border = "rounded",
+				border = "none",
 			})
 
 			-- Lsp keypmaps

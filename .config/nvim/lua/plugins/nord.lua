@@ -3,8 +3,14 @@ return {
 	lazy = true,
 	opts = {
 		on_highlights = function(hl, c)
-			hl["TelescopePromptBorder"] = { link = "Label" }
-			-- hl["NormalFloat"] = { link = "CursorColumn" }
+			-- Popups without borders
+			hl["WhichKeyNormal"] = { link = "Pmenu" }
+			hl["NormalFloat"] = { link = "Pmenu" }
+			hl["FloatBorder"] = { link = "Pmenu" }
+
+			-- Popups with borders
+			hl["NeoTreeFloatNormal"] = { link = "TelescopeBorder" }
+			hl["NeoTreeFloatBorder"] = { link = "TelescopeBorder" }
 		end,
 	},
 	config = function(_, opts)

@@ -13,7 +13,22 @@ return {
 		end,
 	},
 	{
-		-- autocomplete braces, brackets, ...
+		-- Neovim plugin config/development source
+		"folke/lazydev.nvim",
+		ft = "lua",
+		opts = {
+			library = {
+				-- Load luvit types when the `vim.uv` word is found
+				{ path = "luvit-meta/library", words = { "vim%.uv" } },
+			},
+		},
+	},
+	{
+		"Bilal2453/luvit-meta",
+		lazy = true,
+	},
+	{
+		-- Autocomplete braces, brackets, ...
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = {

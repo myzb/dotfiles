@@ -8,13 +8,14 @@ return {
 				style = "classic",
 			},
 			override = {
-				-- Variant 1
-				-- FloatBorder = { bg = palette.bg, fg = palette.white0 },
-				-- NormalFloat = { bg = palette.bg, fg = palette.white0 },
+				-- Popups without borders
+				NormalFloat = { link = "Pmenu" },
+				FloatBorder = { link = "Pmenu" },
+				WhichKeyNormal = { link = "Pmenu" },
 
-				-- Variant 2
-				FloatBorder = { bg = palette.black1, fg = palette.white0 },
-				WhichKeyNormal = { bg = palette.black1, fg = palette.white_alt },
+				-- Popups with borders
+				NeoTreeFloatNormal = { link = "TelescopeBorder" },
+				NeoTreeFloatBorder = { link = "TelescopeBorder" },
 			},
 		})
 	end,
