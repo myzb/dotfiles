@@ -2,9 +2,10 @@ return {
 	{
 		"ray-x/lsp_signature.nvim",
 		opts = {
+			bind = true,
 			hint_enable = false,
 			doc_lines = 0,
-			bind = false,
+			wrap = true,
 			handler_opts = { border = "none" },
 		},
 		config = function(_, opts)
@@ -33,6 +34,7 @@ return {
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-path",
 			"windwp/nvim-autopairs",
+			-- "hrsh7th/cmp-nvim-lsp-signature-help",
 
 			-- Snipped support
 			"L3MON4D3/LuaSnip",
@@ -49,7 +51,6 @@ return {
 			local lspkind = require("lspkind")
 
 			require("luasnip.loaders.from_vscode").lazy_load()
-
 			cmp.setup({
 				enabled = function()
 					-- Disable completion in comments
@@ -78,6 +79,14 @@ return {
 							lazydev = "[Lazydev]",
 						},
 					}),
+					fields = { "abbr", "kind", "menu" },
+					expandable_indicator = true,
+				},
+				window = {
+					documentation = {
+						-- Same highlights as the 'completion' menu
+						winhighlight = "Normal:Pmenu,FloatBorder:Pmenu",
+					},
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item()),
@@ -123,6 +132,7 @@ return {
 				}),
 
 				sources = cmp.config.sources({
+					-- { name = "nvim_lsp_signature_help" },
 					{ name = "lazydev", group_index = 0 },
 					{ name = "nvim_lsp", keyword_length = 2 },
 					{ name = "luasnip", keyword_length = 2 },
@@ -134,7 +144,7 @@ return {
 					-- disallow_partial_fuzzy_matching = true,
 				},
 				experimental = {
-					ghost_text = true,
+					ghost_text = false,
 				},
 			})
 			-- Command line completions for '/' and '?'
