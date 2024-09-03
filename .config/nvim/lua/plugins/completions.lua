@@ -39,6 +39,9 @@ return {
 		"L3MON4D3/LuaSnip",
 		lazy = true,
 		build = "make install_jsregexp",
+		cond = function()
+			return vim.fn.executable("make") == 1
+		end,
 	},
 	{
 		"hrsh7th/nvim-cmp",
@@ -49,7 +52,6 @@ return {
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-path",
 			"windwp/nvim-autopairs",
-			-- "hrsh7th/cmp-nvim-lsp-signature-help",
 
 			-- Snipped support
 			"L3MON4D3/LuaSnip",
@@ -147,7 +149,6 @@ return {
 				}),
 
 				sources = cmp.config.sources({
-					-- { name = "nvim_lsp_signature_help" },
 					{ name = "lazydev", group_index = 0 },
 					{ name = "nvim_lsp", keyword_length = 2 },
 					{ name = "luasnip", keyword_length = 2 },

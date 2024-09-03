@@ -2,6 +2,5 @@
 require("config.lazy")
 
 -- load the theme
--- vim.cmd.colorscheme("nord")
-vim.cmd.colorscheme("nordic")
--- vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("nord")
+-- vim.cmd.colorscheme("nordic")

@@ -1,8 +1,8 @@
 return {
 	"AlexvZyl/nordic.nvim",
 	branch = "dev",
+	lazy = true,
 	config = function(_, opts)
-		local palette = require("nordic.colors")
 		require("nordic").setup({
 			telescope = {
 				style = "classic",
