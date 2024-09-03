@@ -49,8 +49,6 @@ return {
 			-- Completion sources
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-cmdline",
-			"hrsh7th/cmp-path",
 			"windwp/nvim-autopairs",
 
 			-- Snipped support
@@ -61,7 +59,7 @@ return {
 			-- Icons
 			"onsails/lspkind.nvim",
 		},
-		event = { "InsertEnter", "CmdlineEnter" },
+		event = "InsertEnter",
 		config = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
@@ -127,7 +125,7 @@ return {
 						s = cmp.mapping.confirm({ select = true }),
 						c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 					}),
-					-- Super-tab
+					-- Super-Tab
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
@@ -163,24 +161,6 @@ return {
 					ghost_text = false,
 				},
 			})
-			-- Command line completions for '/' and '?'
-			-- cmp.setup.cmdline({ "/", "?" }, {
-			-- 	mapping = cmp.mapping.preset.cmdline(),
-			-- 	sources = {
-			-- 		{ name = "buffer" },
-			-- 	},
-			-- })
-			--
-			-- -- Command line completions for ':'
-			-- cmp.setup.cmdline(":", {
-			-- 	mapping = cmp.mapping.preset.cmdline(),
-			-- 	sources = cmp.config.sources({
-			-- 		{ name = "path" },
-			-- 	}, {
-			-- 		{ name = "cmdline" },
-			-- 	}),
-			-- 	matching = { disallow_symbol_nonprefix_matching = false },
-			-- })
 
 			-- autocompletion for '()' in function/methods
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
