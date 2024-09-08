@@ -14,7 +14,7 @@ stow -t ~/ .
 pacman -S zsh zoxide fzf man
 
 ### neovim
-pacman -S neovim ttf-jetbrains-mono-nerd fd ripgrep
+pacman -S neovim ttf-jetbrains-mono-nerd fd ripgrep npm
 
 ### tmux
 pacman -S tmux inetutils
