@@ -1,12 +1,16 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		opts = { mode = "cursor", max_lines = 1 },
+		opts = {
+			mode = "cursor",
+			max_lines = 1,
+		},
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
 			"RRethy/nvim-treesitter-endwise", -- autocomplete x -> end statements (lua, ruby, ...)
+			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		build = ":TSUpdate",
 		opts = {
@@ -30,6 +34,36 @@ return {
 					node_incremental = "<c-space>",
 					scope_incremental = false,
 					node_decremental = "<bs>",
+				},
+			},
+			textobjects = {
+				move = {
+					enable = true,
+					goto_next_start = {
+						["]f"] = "@function.outer",
+						["]c"] = "@class.outer",
+						["]a"] = "@parameter.inner",
+					},
+					goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
+					goto_previous_start = {
+						["[f"] = "@function.outer",
+						["[c"] = "@class.outer",
+						["[a"] = "@parameter.inner",
+					},
+					goto_previous_end = {
+						["[F"] = "@function.outer",
+						["[C"] = "@class.outer",
+						["[A"] = "@parameter.inner",
+					},
+				},
+				swap = {
+					enable = true,
+					swap_next = {
+						["<leader>a"] = "@parameter.inner",
+					},
+					swap_previous = {
+						["<leader>A"] = "@parameter.inner",
+					},
 				},
 			},
 		},
