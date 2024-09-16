@@ -1,13 +1,13 @@
 return {
+	-- Bottom statusline
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
 	event = "ColorScheme",
 	init = function()
 		vim.opt.showmode = false -- showmode is provided by lualine
 		vim.opt.laststatus = 3 -- have a single global statusline
 	end,
 	opts = {
-		extensions = { "neo-tree" }
+		extensions = { "neo-tree" },
 	},
 	config = function(_, opts)
 		require("lualine").setup(opts)

@@ -1,4 +1,5 @@
 return {
+	-- Git status icons
 	"lewis6991/gitsigns.nvim",
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {
@@ -7,7 +8,7 @@ return {
 			change = { text = "│" },
 			delete = { text = "󰍵" },
 			topdelete = { text = "‾" },
-		changedelete = { text = "~" },
+			changedelete = { text = "~" },
 			untracked = { text = "│" },
 		},
 	},

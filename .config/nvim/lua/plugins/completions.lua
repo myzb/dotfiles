@@ -1,6 +1,7 @@
 return {
 	{
 		"ray-x/lsp_signature.nvim",
+		enabled = false,
 		opts = {
 			bind = true,
 			hint_enable = false,
@@ -45,6 +46,7 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		enabled = false,
 		dependencies = {
 			-- Completion sources
 			"hrsh7th/cmp-nvim-lsp",

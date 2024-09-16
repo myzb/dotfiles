@@ -12,7 +12,7 @@ return {
 			spelling = {
 				enabled = true,
 				suggestions = 20,
-			}
+			},
 		},
 	},
 	config = function(_, opts)

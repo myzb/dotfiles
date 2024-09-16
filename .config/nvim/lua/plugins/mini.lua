@@ -15,5 +15,19 @@ return {
 		-- - sd'   - [S]urround [D]elete [']quotes
 		-- - sr)'  - [S]urround [R]eplace [)] [']
 		require("mini.surround").setup()
+
+		-- Icon Support
+		require("mini.icons").setup()
+
+		MiniIcons.tweak_lsp_kind() -- add icon to completion menu
+		MiniIcons.mock_nvim_web_devicons() -- mock web_devicons plugin
+
+		-- Completion Menu
+		require("mini.completion").setup({
+			lsp_completion = {
+				source_func = "omnifunc",
+				auto_setup = false, -- setup via "LspAttach"
+			},
+		})
 	end,
 }

@@ -1,4 +1,5 @@
 return {
+	-- Highlight word under cursor
 	"RRethy/vim-illuminate",
 	opts = {
 		delay = 200,
@@ -9,5 +10,5 @@ return {
 	},
 	config = function(_, opts)
 		require("illuminate").configure(opts)
-	end
+	end,
 }
