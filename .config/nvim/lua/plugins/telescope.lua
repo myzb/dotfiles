@@ -64,6 +64,11 @@ return {
 			vim.keymap.set("n", "<leader>sn", function()
 				builtin.find_files({ cwd = vim.fn.stdpath("config") })
 			end, { desc = "[S]earch [N]eovim files" })
+
+			-- Search all files
+			vim.keymap.set("n", "<leader>sF", function()
+				builtin.find_files({ hidden = true, no_ignore = true })
+			end, { desc = "[S]earch All [F]iles" })
 		end,
 	},
 }
