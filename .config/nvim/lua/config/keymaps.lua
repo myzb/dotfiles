@@ -1,12 +1,6 @@
--- Navigate vim panes
 local keymap = vim.keymap.set
--- local opts = {noremap = true, silent = true}
--- keymap("n", "<c-k>", "<c-w>k", opts)
--- keymap("n", "<c-j>", "<c-w>j", opts)
--- keymap("n", "<c-h>", "<c-w>h", opts)
--- keymap("n", "<c-l>", "<c-w>l", opts)
 
--- Navigate within inisert mode
+-- Navigate within insert mode
 keymap("i", "<c-k>", "<Up>", { desc = "Up" })
 keymap("i", "<c-j>", "<Down>", { desc = "Down" })
 keymap("i", "<c-h>", "<Left>", { desc = "Left" })
