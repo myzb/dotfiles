@@ -5,13 +5,8 @@ return {
 			-- Lsp manager
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-
 			-- Useful status updates for LSP.
 			{ "j-hui/fidget.nvim", opts = {} },
-
-			-- client lsp capabilities from cmp
-			-- "hrsh7th/nvim-cmp",
-			-- "hrsh7th/cmp-nvim-lsp",
 		},
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
@@ -20,7 +15,6 @@ return {
 			local mason_lspconfig = require("mason-lspconfig")
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			-- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 			mason_lspconfig.setup_handlers({
 				-- Default handler
