@@ -1,16 +1,16 @@
-local keymap = vim.keymap.set
+local map = vim.keymap.set
 
 -- Navigate within insert mode
-keymap("i", "<c-k>", "<Up>", { desc = "Up" })
-keymap("i", "<c-j>", "<Down>", { desc = "Down" })
-keymap("i", "<c-h>", "<Left>", { desc = "Left" })
-keymap("i", "<c-l>", "<Right>", { desc = "Right" })
+map("i", "<c-k>", "<Up>", { desc = "Up" })
+map("i", "<c-j>", "<Down>", { desc = "Down" })
+map("i", "<c-h>", "<Left>", { desc = "Left" })
+map("i", "<c-l>", "<Right>", { desc = "Right" })
 
-keymap("n", "<esc>", "<cmd> nohlsearch <cr>", { desc = "Hide search highlight" })
-keymap("n", "<leader>nr", "<cmd> set relativenumber! <cr>", { desc = "Toogle relative line numbers" })
+map("n", "<esc>", "<cmd> nohlsearch <cr>", { desc = "Hide search highlight" })
+map("n", "<leader>nr", "<cmd> set relativenumber! <cr>", { desc = "Toogle relative line numbers" })
 
 -- Change indent tab size
-vim.keymap.set("n", "<leader>it", function()
+map("n", "<leader>it", function()
 	vim.ui.input({ prompt = "Indent tab to: " }, function(input)
 		vim.opt.tabstop = tonumber(input)
 		vim.opt.softtabstop = tonumber(input)
@@ -20,7 +20,7 @@ vim.keymap.set("n", "<leader>it", function()
 end, { desc = "Indent tabs" })
 
 -- Change indent space size
-vim.keymap.set("n", "<leader>is", function()
+map("n", "<leader>is", function()
 	vim.ui.input({ prompt = "Indent space to: " }, function(input)
 		vim.opt.tabstop = 8
 		vim.opt.softtabstop = tonumber(input)

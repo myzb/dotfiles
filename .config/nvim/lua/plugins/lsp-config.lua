@@ -2,7 +2,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			-- Lsp manager
+			-- Lsp plugin manager
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			-- Useful status updates for LSP.

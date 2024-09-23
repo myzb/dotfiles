@@ -1,6 +1,6 @@
 return {
 	{
-		-- Adds Neovim config/sources/functions to LuaLS
+		-- Adds neovim config/sources/functions to LuaLS
 		"folke/lazydev.nvim",
 		ft = "lua",
 		opts = {
