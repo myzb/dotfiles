@@ -19,10 +19,7 @@ return {
 		local wk = require("which-key")
 		wk.setup(opts)
 		wk.add({
-			-- { "<leader>b", desc = "Buffers"},
-			-- { "<leader>f", desc = "Find" },
-			-- { "<leader>l", desc = "LSP" },
-			-- { "g", group = "Go" },
+			{ "<C-t>", desc = "Jump back tag stack" },
 		})
 	end,
 }
