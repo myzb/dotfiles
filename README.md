@@ -6,7 +6,7 @@ pacman -S stow git
 ## Installing
 git clone https://github.com/myzb/dotfiles.git
 cd dotfiles
-stow -t ~/ . 
+stow -t ~/ .
 
 ## Setup
 
