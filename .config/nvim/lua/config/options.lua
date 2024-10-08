@@ -11,6 +11,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true -- highlight line the cursor is at
 
 vim.opt.number = true -- enable line numbers
+vim.opt.relativenumber = true -- enable relative numbers
 
 vim.opt.colorcolumn = "80" -- column at 80 chars
 vim.opt.listchars = { space = "·", tab = "╶─", trail = "·", nbsp = "␣" }

@@ -70,6 +70,13 @@ return {
 					prompt_title = "Find All Files",
 				})
 			end, { desc = "[S]earch All [F]iles" })
+			vim.keymap.set("n", "<leader>sG", function()
+				ts_builtin.live_grep({
+					hidden = true,
+					no_ignore = true,
+					prompt_title = "Find All by Grep",
+				})
+			end, { desc = "[S]earch All by [G]rep" })
 		end,
 	},
 }
