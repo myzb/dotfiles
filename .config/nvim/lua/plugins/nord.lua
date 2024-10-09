@@ -11,6 +11,9 @@ return {
 			-- Popups with borders
 			hl["NeoTreeFloatNormal"] = { link = "TelescopeBorder" }
 			hl["NeoTreeFloatBorder"] = { link = "TelescopeBorder" }
+
+			-- Popup menu, item kind icon_text
+			hl["PmenuKind"] = { fg = c.aurora.purple, bg = c.polar_night.bright }
 		end,
 	},
 	config = function(_, opts)
