@@ -1,6 +1,5 @@
 return {
 	"AlexvZyl/nordic.nvim",
-	branch = "dev",
 	lazy = true,
 	opts = {
 		telescope = {
