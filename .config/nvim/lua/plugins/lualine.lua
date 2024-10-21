@@ -8,6 +8,14 @@ return {
 	end,
 	opts = {
 		extensions = { "neo-tree" },
+		sections = {
+			lualine_c = {
+				{
+					"filename",
+					path = 1,
+				}
+			}
+		}
 	},
 	config = function(_, opts)
 		require("lualine").setup(opts)

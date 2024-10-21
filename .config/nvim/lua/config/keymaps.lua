@@ -6,6 +6,8 @@ map("i", "<c-j>", "<Down>", { desc = "Down" })
 map("i", "<c-h>", "<Left>", { desc = "Left" })
 map("i", "<c-l>", "<Right>", { desc = "Right" })
 
+-- Other Keybinds
+-- map("i", "<s-tab>", "<c-d>") # FIXME
 map("n", "<esc>", "<cmd> nohlsearch <cr>", { desc = "Hide search highlight" })
 map("n", "<leader>nr", "<cmd> set relativenumber! <cr>", { desc = "Toogle relative line numbers" })
 
