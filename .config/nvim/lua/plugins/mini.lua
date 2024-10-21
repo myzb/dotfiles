@@ -46,7 +46,7 @@ return {
 
 		-- Keybind: Tab/S-Tab navigation in popup menus
 		imap_expr("<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
-		imap_expr("<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
+		imap_expr("<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<C-d>"]])
 
 		-- Keybind: CR to confirm selection in popup menus
 		imap_expr("<CR>", function()
