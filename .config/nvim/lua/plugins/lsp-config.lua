@@ -89,19 +89,19 @@ return {
 					map("gd", ts_builtin.lsp_definitions, "[G]oto [D]efinition")
 					map("gr", ts_builtin.lsp_references, "[G]oto [R]eferences")
 					map("gI", ts_builtin.lsp_implementations, "[G]oto [I]mplementation")
-					map("<leader>D", ts_builtin.lsp_type_definitions, "Type [D]efinition")
+					map("<Leader>D", ts_builtin.lsp_type_definitions, "Type [D]efinition")
 
 					-- Symbol (variables, functions, ...) search in current document/workspace
-					map("<leader>ds", ts_builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
-					map("<leader>ws", ts_builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+					map("<Leader>ds", ts_builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
+					map("<Leader>ws", ts_builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
-					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame variable")
-					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+					map("<Leader>rn", vim.lsp.buf.rename, "[R]e[n]ame variable")
+					map("<Leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 					map("K", vim.lsp.buf.hover, "Hover Documentation")
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
-					map("<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Show Signature")
-					map("gl", "<cmd>lua vim.diagnostic.open_float()<cr>", "Show Diagnostics")
+					map("<Leader>ls", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", "Show Signature")
+					map("gl", "<Cmd>lua vim.diagnostic.open_float()<CR>", "Show Diagnostics")
 				end,
 			})
 		end,
