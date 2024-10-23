@@ -13,9 +13,9 @@ return {
 				{
 					"filename",
 					path = 1,
-				}
-			}
-		}
+				},
+			},
+		},
 	},
 	config = function(_, opts)
 		require("lualine").setup(opts)
