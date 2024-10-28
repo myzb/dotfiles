@@ -25,8 +25,12 @@ return {
 				end,
 				-- Special handlers
 				["clangd"] = function()
+					-- copilot expects utf-16 encoding
+					local c = {
+						offsetEncoding = { "utf-16" },
+					}
 					lspconfig["clangd"].setup({
-						capabilities = capabilities,
+						capabilities = vim.tbl_deep_extend("force", capabilities, c),
 						cmd = { "clangd", "--fallback-style=webkit" },
 					})
 				end,
