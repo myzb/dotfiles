@@ -88,24 +88,25 @@ return {
 						vim.keymap.set("n", k, f, { buffer = event.buf, desc = d })
 					end
 
-					local ts_builtin = require("telescope.builtin")
+					local fzf = require("fzf-lua")
 
-					map("gd", ts_builtin.lsp_definitions, "[G]oto [D]efinition")
-					map("gr", ts_builtin.lsp_references, "[G]oto [R]eferences")
-					map("gI", ts_builtin.lsp_implementations, "[G]oto [I]mplementation")
-					map("<Leader>D", ts_builtin.lsp_type_definitions, "Type [D]efinition")
+					map("gd", fzf.lsp_definitions, "[G]oto [D]efinition")
+					map("gr", fzf.lsp_references, "[G]oto [R]eferences")
+					map("gI", fzf.lsp_implementations, "[G]oto [I]mplementation")
+					map("<Leader>dd", fzf.lsp_document_diagnostics, "Document diagnostics")
+					map("<Leader>D", fzf.lsp_typedefs, "Type [D]efinition")
 
 					-- Symbol (variables, functions, ...) search in current document/workspace
-					map("<Leader>ds", ts_builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
-					map("<Leader>ws", ts_builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+					map("<Leader>ds", fzf.lsp_document_symbols, "[D]ocument [S]ymbols")
+					map("<Leader>ws", fzf.lsp_live_workspace_symbols, "[W]orkspace [S]ymbols")
 
 					map("<Leader>rn", vim.lsp.buf.rename, "[R]e[n]ame variable")
 					map("<Leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 					map("K", vim.lsp.buf.hover, "Hover Documentation")
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
-					map("<Leader>ls", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", "Show Signature")
-					map("gl", "<Cmd>lua vim.diagnostic.open_float()<CR>", "Show Diagnostics")
+					map("<Leader>ls", vim.lsp.buf.signature_help, "Show Signature")
+					map("gl", vim.diagnostic.open_float, "Show Diagnostics")
 				end,
 			})
 		end,
