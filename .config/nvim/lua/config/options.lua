@@ -15,7 +15,7 @@ vim.opt.relativenumber = true -- enable relative numbers
 
 vim.opt.colorcolumn = "80" -- column at 80 chars
 vim.opt.listchars = { space = "·", tab = "╶─", trail = "·", nbsp = "␣" }
-vim.opt.list = true
+-- vim.opt.list = true
 
 vim.opt.ruler = false
 vim.opt.termguicolors = true

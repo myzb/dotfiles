@@ -6,7 +6,12 @@ return {
 	config = function()
 		-- calling `setup` is optional for customization
 		local fzf = require("fzf-lua")
-		fzf.setup({})
+		fzf.setup({
+			"default-title",
+			winopts = {
+				backdrop = 100,
+			},
+		})
 
 		-- Basic keymaps
 		vim.keymap.set("n", "<Leader>sh", fzf.helptags, { desc = "Search help" })
@@ -45,7 +50,7 @@ return {
 			fzf.live_grep({
 				hidden = true,
 				no_ignore = true,
-				prompt_title = "Search All by Grep",
+				winopts = { title = " Search All by Grep " },
 			})
 		end, { desc = "Search all by grep" })
 	end,

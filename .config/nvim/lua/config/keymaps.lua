@@ -8,7 +8,8 @@ map("i", "<C-l>", "<Right>", { desc = "Right" })
 
 -- Other Keybinds
 map("n", "<Esc>", "<Cmd> nohlsearch <CR>", { desc = "Hide search highlight" })
-map("n", "<Leader>nr", "<Cmd> set relativenumber! <CR>", { desc = "Toogle relative line numbers" })
+map("n", "<Leader>tr", "<Cmd> set relativenumber! <CR>", { desc = "Toogle relative line numbers" })
+map("n", "<Leader>tw", "<Cmd> set list! <CR>", { desc = "Toogle whitespace characters" })
 
 -- Change indent tab size
 map("n", "<Leader>it", function()

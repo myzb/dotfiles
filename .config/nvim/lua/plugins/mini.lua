@@ -28,35 +28,35 @@ return {
 			},
 		})
 
-		-- -- Auotpairs for braces, bracket pairs, etc.
-		-- local mini_pairs = require("mini.pairs")
-		-- mini_pairs.setup()
-		--
-		-- -- Completion Menu
-		-- require("mini.completion").setup({
-		-- 	lsp_completion = {
-		-- 		source_func = "omnifunc",
-		-- 		auto_setup = false, -- setup via "LspAttach"
-		-- 	},
-		-- })
-		--
-		-- local imap_expr = function(lhs, rhs)
-		-- 	vim.keymap.set("i", lhs, rhs, { expr = true })
-		-- end
-		--
-		-- -- Keybind: Tab/S-Tab navigation in popup menus
-		-- imap_expr("<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
-		-- imap_expr("<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<C-d>"]])
-		--
-		-- -- Keybind: CR to confirm selection in popup menus
-		-- imap_expr("<CR>", function()
-		-- 	if vim.fn.pumvisible() ~= 0 then
-		-- 		local sel = vim.fn.complete_info()["selected"] ~= -1
-		-- 		return sel and "<C-y>" or "<C-y><CR>"
-		-- 	else
-		-- 		return mini_pairs.cr()
-		-- 	end
-		-- end)
+		-- Auotpairs for braces, bracket pairs, etc.
+		local mini_pairs = require("mini.pairs")
+		mini_pairs.setup()
+
+		-- Completion Menu
+		require("mini.completion").setup({
+			lsp_completion = {
+				source_func = "omnifunc",
+				auto_setup = false, -- setup via "LspAttach"
+			},
+		})
+
+		local imap_expr = function(lhs, rhs)
+			vim.keymap.set("i", lhs, rhs, { expr = true })
+		end
+
+		-- Keybind: Tab/S-Tab navigation in popup menus
+		imap_expr("<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
+		imap_expr("<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<C-d>"]])
+
+		-- Keybind: CR to confirm selection in popup menus
+		imap_expr("<CR>", function()
+			if vim.fn.pumvisible() ~= 0 then
+				local sel = vim.fn.complete_info()["selected"] ~= -1
+				return sel and "<C-y>" or "<C-y><CR>"
+			else
+				return mini_pairs.cr()
+			end
+		end)
 
 		-- Highlight trailing spaces
 		require("mini.trailspace").setup()
