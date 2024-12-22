@@ -3,6 +3,7 @@ return {
 		-- Indentation line
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
+		enabled = false,
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
 			whitespace = { remove_blankline_trail = true },
