@@ -19,7 +19,7 @@ return {
 			return vim.fn.executable("make") == 1
 		end,
 		opts = {
-			debug = true,
+			-- debug = true,
 		},
 	},
 }

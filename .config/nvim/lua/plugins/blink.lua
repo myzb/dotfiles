@@ -2,10 +2,11 @@ return {
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source
 	dependencies = "rafamadriz/friendly-snippets",
-	enabled = false,
+
+	event = "InsertEnter",
 
 	-- use a release tag to download pre-built binaries
-	version = "v0.8.1",
+	version = "v0.10.0",
 	-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
 	-- build = 'cargo build --release',
 	-- If you use nix, you can build from source using latest nightly rust with:
@@ -27,9 +28,12 @@ return {
 
 			-- Disable auto brackets
 			-- NOTE: some LSPs may add auto brackets themselves anyway
+			accept = { auto_brackets = { enabled = true } },
 
 			-- Insert completion item on selection, don't select by default
-			list = { selection = "auto_insert" },
+			list = {
+				selection = { preselect = false, auto_insert = true },
+			},
 
 			-- Show documentation when selecting a completion item
 			-- documentation = { auto_show = true, auto_show_delay_ms = 500 },

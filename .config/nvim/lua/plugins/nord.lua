@@ -9,8 +9,8 @@ return {
 			hl["FloatBorder"] = { link = "Pmenu" }
 
 			-- Popups with borders
-			hl["NeoTreeFloatNormal"] = { link = "TelescopeBorder" }
-			hl["NeoTreeFloatBorder"] = { link = "TelescopeBorder" }
+			hl["NeoTreeFloatNormal"] = { link = "FzfLuaNormal" }
+			hl["NeoTreeFloatBorder"] = { link = "FzfLuaBorder" }
 
 			-- Popup menu, item kind icon_text
 			hl["PmenuKind"] = { fg = c.aurora.purple, bg = c.polar_night.bright }
