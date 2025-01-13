@@ -17,6 +17,7 @@ return {
 			ensure_installed = {
 				-- Default needed
 				"c",
+				"diff",
 				"lua",
 				"vim",
 				"vimdoc",
