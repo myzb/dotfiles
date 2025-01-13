@@ -81,9 +81,6 @@ return {
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(event)
-					-- Attach completion engine
-					-- vim.bo[event.buf].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"
-
 					-- Keymaps
 					local function map(k, f, d)
 						vim.keymap.set("n", k, f, { buffer = event.buf, desc = d })
