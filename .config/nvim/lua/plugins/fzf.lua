@@ -12,12 +12,20 @@ return {
 		{ "<Leader>sw", "<Cmd>FzfLua grep_cword<CR>", desc = "Search current word" },
 		{ "<Leader>sg", "<Cmd>FzfLua live_grep<CR>", desc = "Search by grep" },
 		{ "<Leader>sr", "<Cmd>FzfLua resume<CR>", desc = "Search resume" },
-		{ "<Leader>s.", "<Cmd>FzfLua oldfiles<CR>", desc = "Search recent files" },
 		{ "<Leader><Leader>", "<Cmd>FzfLua buffers<CR>", desc = "Search open buffers" },
 		{ "<Leader>/", "<Cmd>FzfLua grep_curbuf<CR>", desc = "Search in current buffer" },
 		{ "<Leader>sF", "<Cmd>FzfLua git_files<CR>", desc = "Search git-files" },
 
 		-- Advanced keymaps
+		{
+			"<Leader>so",
+			function()
+				require("fzf-lua").oldfiles({
+					cwd = vim.uv.cwd(),
+				})
+			end,
+			desc = "Search oldfiles",
+		},
 		{
 			"<Leader>sn",
 			function()
