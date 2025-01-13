@@ -29,8 +29,8 @@ return {
 		})
 
 		-- Auotpairs for braces, bracket pairs, etc.
-		-- local mini_pairs = require("mini.pairs")
-		-- mini_pairs.setup()
+		local mini_pairs = require("mini.pairs")
+		mini_pairs.setup()
 
 		-- Completion Menu
 		-- require("mini.completion").setup({
