@@ -2,9 +2,6 @@ return {
 	"AlexvZyl/nordic.nvim",
 	lazy = true,
 	opts = {
-		telescope = {
-			style = "classic",
-		},
 		on_highlight = function(hl, c)
 			-- Popups without borders
 			hl["NormalFloat"] = { link = "Pmenu" }

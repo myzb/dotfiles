@@ -4,9 +4,9 @@ return {
 	opts = {
 		on_highlights = function(hl, c)
 			-- Popups without borders
-			hl["WhichKeyNormal"] = { link = "Pmenu" }
 			hl["NormalFloat"] = { link = "Pmenu" }
 			hl["FloatBorder"] = { link = "Pmenu" }
+			hl["WhichKeyNormal"] = { link = "Pmenu" }
 
 			-- Popups with borders
 			hl["NeoTreeFloatNormal"] = { link = "FzfLuaNormal" }
