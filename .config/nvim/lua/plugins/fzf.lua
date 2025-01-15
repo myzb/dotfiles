@@ -15,37 +15,22 @@ return {
 		{ "<Leader><Leader>", "<Cmd>FzfLua buffers<CR>", desc = "Search open buffers" },
 		{ "<Leader>/", "<Cmd>FzfLua grep_curbuf<CR>", desc = "Search in current buffer" },
 		{ "<Leader>sF", "<Cmd>FzfLua git_files<CR>", desc = "Search git-files" },
-
-		-- Advanced keymaps
-		{
-			"<Leader>so",
-			function()
-				require("fzf-lua").oldfiles({
-					cwd = vim.uv.cwd(),
-				})
-			end,
-			desc = "Search oldfiles",
-		},
-		{
-			"<Leader>sn",
-			function()
-				require("fzf-lua").files({
-					cwd = vim.fn.stdpath("config"),
-					winopts = { title = "Neovim Config Files " },
-				})
-			end,
-			desc = "Search neovim config",
-		},
+		{ "<Leader>st", "<Cmd>FzfLua git_status<CR>", desc = "Search git-status" },
+		{ "<Leader>sb", "<Cmd>FzfLua marks<CR>", desc = "Search marks" },
+		{ "<Leader>sl", "<Cmd>FzfLua loclist<CR>", desc = "Search loclist" },
+		{ "<Leader>sq", "<Cmd>FzfLua quickfix<CR>", desc = "Search quickfix" },
 		{
 			"<Leader>sG",
 			function()
-				require("fzf-lua").live_grep({
-					cmd = "git grep --line-number --column --color=always",
-					winopts = { title = " Search by grep (git-files) " },
-				})
+				require("fzf-lua").live_grep({ cmd = "git grep -n --column --color" })
 			end,
 			desc = "Search by grep (git)",
 		},
+
+		-- Advanced keymaps
+		{ "<Leader>so", "<Cmd>FzfLua oldfiles cwd=" .. vim.uv.cwd() .. "<CR>", desc = "Search oldfiles" },
+		{ "<Leader>sn", "<Cmd>FzfLua files cwd=" .. vim.fn.stdpath("config") .. "<CR>", desc = "Search neovim config" },
+		-- { "<Leader>sG", "<Cmd>FzfLua live_grep cmd='git grep -n --column --color'<CR>", desc = "Search by grep (git)" },
 	},
 	config = function(_, opts)
 		local fzf = require("fzf-lua")
