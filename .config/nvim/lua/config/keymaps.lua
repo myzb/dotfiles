@@ -30,3 +30,13 @@ map("n", "<Leader>is", function()
 		vim.opt.expandtab = true
 	end)
 end, { desc = "Indent spaces" })
+
+-- Change indent mixed tab/spaces size
+map("n", "<Leader>im", function()
+	vim.ui.input({ prompt = "Indent mixed to: " }, function(input)
+		vim.opt.tabstop = 8
+		vim.opt.softtabstop = tonumber(input)
+		vim.opt.shiftwidth = tonumber(input)
+		vim.opt.expandtab = false
+	end)
+end, { desc = "Indent mixed" })

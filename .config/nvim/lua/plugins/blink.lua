@@ -5,7 +5,7 @@ return {
 	version = "v0.*",
 	opts = {
 		keymap = {
-			["<C-s>"] = { "show", "show_documentation", "hide_documentation" },
+			["<C-d>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "cancel", "fallback" },
 			["<C-y>"] = { "select_and_accept", "fallback" },
 			["<CR>"] = { "accept", "fallback" },

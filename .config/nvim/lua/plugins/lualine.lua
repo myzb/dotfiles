@@ -15,6 +15,10 @@ return {
 					path = 1,
 				},
 			},
+			lualine_x = {
+				"encoding",
+				"filetype",
+			},
 		},
 	},
 	config = function(_, opts)

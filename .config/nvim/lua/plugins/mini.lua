@@ -9,8 +9,6 @@ return {
 
 		-- Icon Support
 		require("mini.icons").setup()
-
-		-- MiniIcons.tweak_lsp_kind() -- add icon to completion menu
 		MiniIcons.mock_nvim_web_devicons() -- mock web_devicons plugin
 
 		-- Highlight certain patterns
