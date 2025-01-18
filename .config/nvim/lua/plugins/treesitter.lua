@@ -19,6 +19,8 @@ return {
 				"c",
 				"diff",
 				"lua",
+				"markdown",
+				"markdown_inline",
 				"vim",
 				"vimdoc",
 				"query",

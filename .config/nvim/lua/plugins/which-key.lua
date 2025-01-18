@@ -1,25 +1,21 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	init = function()
-		vim.opt.timeout = true
-		vim.opt.timeoutlen = 300
-	end,
 	opts = {
-		plugins = {
-			marks = true,
-			registers = true,
-			spelling = {
-				enabled = true,
-				suggestions = 20,
-			},
-		},
+		spec = {
+			{ "<C-t>", desc = "Jump back tag stack" },
+
+		}
+	},
+	keys = {
+		{
+			"<leader>?",
+			function() require("which-key").show({ global = false }) end,
+			desc = "Buffer Keymaps (which-key)"
+		}
 	},
 	config = function(_, opts)
 		local wk = require("which-key")
 		wk.setup(opts)
-		wk.add({
-			{ "<C-t>", desc = "Jump back tag stack" },
-		})
 	end,
 }

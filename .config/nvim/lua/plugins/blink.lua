@@ -2,7 +2,7 @@ return {
 	"saghen/blink.cmp",
 	dependencies = { "rafamadriz/friendly-snippets" },
 	event = { "InsertEnter", "CmdLineEnter" },
-	version = "v0.*",
+	version = "v0.10.0",
 	opts = {
 		keymap = {
 			["<C-d>"] = { "show", "show_documentation", "hide_documentation" },
