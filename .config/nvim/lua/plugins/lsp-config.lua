@@ -13,8 +13,6 @@ return {
 			-- Setup lsp's handlers
 			local lspconfig = require("lspconfig")
 			local mason_lspconfig = require("mason-lspconfig")
-
-			-- local capabilities = vim.lsp.protocol.make_client_capabilities()
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			mason_lspconfig.setup_handlers({
@@ -77,34 +75,35 @@ return {
 				border = "none",
 			})
 
-			-- Lsp keypmaps
+			-- General keymaps
+			local fzf = require("fzf-lua")
+
+			vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Show diagnostics" })
+			vim.keymap.set("n", "<Leader>dd", fzf.diagnostics_document, { desc = "Document diagnostics" })
+
+			-- Buffer on-attach keymaps
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(event)
-					-- Keymaps
+					-- Keymap helper
 					local function map(k, f, d)
 						vim.keymap.set("n", k, f, { buffer = event.buf, desc = d })
 					end
 
-					local fzf = require("fzf-lua")
-
-					map("gd", fzf.lsp_definitions, "[G]oto [D]efinition")
-					map("gr", fzf.lsp_references, "[G]oto [R]eferences")
-					map("gI", fzf.lsp_implementations, "[G]oto [I]mplementation")
-					map("<Leader>dd", fzf.lsp_document_diagnostics, "Document diagnostics")
-					map("<Leader>D", fzf.lsp_typedefs, "Type [D]efinition")
+					map("gd", fzf.lsp_definitions, "Goto definition")
+					map("gr", fzf.lsp_references, "Goto references")
+					map("gI", fzf.lsp_implementations, "Goto implementation")
+					map("<Leader>D", fzf.lsp_typedefs, "Type definition")
 
 					-- Symbol (variables, functions, ...) search in current document/workspace
-					map("<Leader>ds", fzf.lsp_document_symbols, "[D]ocument [S]ymbols")
-					map("<Leader>ws", fzf.lsp_live_workspace_symbols, "[W]orkspace [S]ymbols")
+					map("<Leader>ds", fzf.lsp_document_symbols, "Document symbols")
+					map("<Leader>ws", fzf.lsp_live_workspace_symbols, "Workspace symbols")
 
-					map("<Leader>rn", vim.lsp.buf.rename, "[R]e[n]ame variable")
-					map("<Leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-					map("K", vim.lsp.buf.hover, "Hover Documentation")
-					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-
-					map("<Leader>ls", vim.lsp.buf.signature_help, "Show Signature")
-					map("gl", vim.diagnostic.open_float, "Show Diagnostics")
+					map("<Leader>rn", vim.lsp.buf.rename, "Rename variable")
+					map("<Leader>ca", vim.lsp.buf.code_action, "Code action")
+					map("K", vim.lsp.buf.hover, "Hover documentation")
+					map("gD", vim.lsp.buf.declaration, "Goto declaration")
+					map("<Leader>ls", vim.lsp.buf.signature_help, "Show signature")
 				end,
 			})
 		end,
