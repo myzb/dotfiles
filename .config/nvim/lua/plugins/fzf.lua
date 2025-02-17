@@ -11,7 +11,7 @@ return {
 		{ "<Leader>ss", "<Cmd>FzfLua builtin<CR>", desc = "Search select" },
 		{ "<Leader>sw", "<Cmd>FzfLua grep_cword<CR>", desc = "Search current word" },
 		{ "<Leader>sg", "<Cmd>FzfLua live_grep<CR>", desc = "Search by grep" },
-		{ "<Leader>sG", "<Cmd>FzfLua live_grep_glob<CR>", desc = "Search by grep (glob)" },
+		{ "<Leader>sG", "<Cmd>FzfLua live_grep_glob cwd=" .. vim.uv.cwd() .. "<CR>", desc = "Search by grep (glob)" },
 		{ "<Leader>sr", "<Cmd>FzfLua resume<CR>", desc = "Search resume" },
 		{ "<Leader><Leader>", "<Cmd>FzfLua buffers<CR>", desc = "Search open buffers" },
 		{ "<Leader>/", "<Cmd>FzfLua grep_curbuf<CR>", desc = "Search in current buffer" },
