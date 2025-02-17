@@ -14,6 +14,8 @@ return {
 					"filename",
 					path = 1,
 				},
+
+				"searchcount",
 			},
 			lualine_x = {
 				"encoding",

@@ -13,9 +13,11 @@ vim.opt.cursorline = true -- highlight line the cursor is at
 vim.opt.number = true -- enable line numbers
 vim.opt.relativenumber = true -- enable relative numbers
 
+vim.opt.cmdheight = 0 -- autoshow cmdline only when needed
+
 vim.opt.colorcolumn = "80" -- column at 80 chars
 vim.opt.listchars = { space = "·", tab = "╶─", trail = "·", nbsp = "␣" }
--- vim.opt.list = true
+vim.opt.list = false -- show/hide listchars
 
 vim.opt.ruler = false
 vim.opt.termguicolors = true
