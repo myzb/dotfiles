@@ -5,6 +5,9 @@ return {
 	version = "v0.11.0",
 	opts = {
 		keymap = {
+			-- Do not inherit default keybinds
+			preset = "none",
+
 			["<C-d>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "cancel", "fallback" },
 			["<C-y>"] = { "select_and_accept", "fallback" },
@@ -19,6 +22,8 @@ return {
 
 			["<C-f>"] = { "scroll_documentation_down", "fallback" },
 			["<C-b>"] = { "scroll_documentation_up", "fallback" },
+
+			["<C-s>"] = { "show_signature", "hide_signature", "fallback" },
 		},
 		completion = {
 			-- Enable auto brackets
@@ -27,6 +32,9 @@ return {
 			list = {
 				selection = { preselect = false, auto_insert = true },
 			},
+			-- Only consider text before cursor for completion matching
+			keyword = { range = "prefix" },
+
 			-- Display a preview of the selected item on the current line
 			ghost_text = { enabled = false },
 
@@ -55,7 +63,14 @@ return {
 				},
 			},
 		},
-		signature = { enabled = true },
+		signature = {
+			enabled = true,
+			window = {
+				-- Only show signature, hide documentation part
+				show_documentation = false,
+				treesitter_highlighting = true,
+			},
+		},
 	},
 	opts_extend = { "sources.default" },
 }
