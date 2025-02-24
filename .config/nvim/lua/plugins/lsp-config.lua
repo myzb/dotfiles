@@ -13,7 +13,8 @@ return {
 			-- Setup lsp's handlers
 			local lspconfig = require("lspconfig")
 			local mason_lspconfig = require("mason-lspconfig")
-			local capabilities = require("blink.cmp").get_lsp_capabilities()
+			-- local capabilities = require("blink.cmp").get_lsp_capabilities()
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 			mason_lspconfig.setup_handlers({
 				-- Default handler
@@ -85,6 +86,9 @@ return {
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(event)
+					-- Attach completion engine
+					vim.bo[event.buf].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"
+
 					-- Keymap helper
 					local function map(k, f, d)
 						vim.keymap.set("n", k, f, { buffer = event.buf, desc = d })
