@@ -40,8 +40,8 @@ return {
 			local signs = {
 				{ name = "DiagnosticSignError", text = "" },
 				{ name = "DiagnosticSignWarn", text = "" },
-				{ name = "DiagnosticSignHint", text = "" },
-				{ name = "DiagnosticSignInfo", text = "" },
+				{ name = "DiagnosticSignHint", text = "" },
+				{ name = "DiagnosticSignInfo", text = "" },
 			}
 			for _, sign in ipairs(signs) do
 				vim.fn.sign_define(sign.name, {
@@ -77,10 +77,10 @@ return {
 			})
 
 			-- General keymaps
-			local fzf = require("fzf-lua")
+			-- local fzf = require("fzf-lua")
 
 			vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Show diagnostics" })
-			vim.keymap.set("n", "<Leader>dd", fzf.diagnostics_document, { desc = "Document diagnostics" })
+			-- vim.keymap.set("n", "<Leader>dd", fzf.diagnostics_document, { desc = "Document diagnostics" })
 
 			-- Buffer on-attach keymaps
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -94,14 +94,14 @@ return {
 						vim.keymap.set("n", k, f, { buffer = event.buf, desc = d })
 					end
 
-					map("gd", fzf.lsp_definitions, "Goto definition")
-					map("gr", fzf.lsp_references, "Goto references")
-					map("gI", fzf.lsp_implementations, "Goto implementation")
-					map("<Leader>D", fzf.lsp_typedefs, "Type definition")
+					-- map("gd", fzf.lsp_definitions, "Goto definition")
+					-- map("gr", fzf.lsp_references, "Goto references")
+					-- map("gI", fzf.lsp_implementations, "Goto implementation")
+					-- map("<Leader>D", fzf.lsp_typedefs, "Type definition")
 
 					-- Symbol (variables, functions, ...) search in current document/workspace
-					map("<Leader>ds", fzf.lsp_document_symbols, "Document symbols")
-					map("<Leader>ws", fzf.lsp_live_workspace_symbols, "Workspace symbols")
+					-- map("<Leader>ds", fzf.lsp_document_symbols, "Document symbols")
+					-- map("<Leader>ws", fzf.lsp_live_workspace_symbols, "Workspace symbols")
 
 					map("<Leader>rn", vim.lsp.buf.rename, "Rename variable")
 					map("<Leader>ca", vim.lsp.buf.code_action, "Code action")

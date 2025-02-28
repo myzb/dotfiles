@@ -57,6 +57,12 @@ return {
 			end
 		end)
 
+		-- Disable completion menu for snacks_picker
+		local f = function(args)
+			vim.b[args.buf].minicompletion_disable = true
+		end
+		vim.api.nvim_create_autocmd("Filetype", { pattern = "snacks_picker_input", callback = f })
+
 		-- Highlight trailing spaces
 		require("mini.trailspace").setup()
 	end,

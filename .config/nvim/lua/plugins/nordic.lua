@@ -9,7 +9,7 @@ return {
 			hl["WhichKeyNormal"] = { link = "Pmenu" }
 
 			-- Popups with borders
-			hl["NeoTreeFloatNormal"] = { link = "FzfLuaNormal" }
+			hl["NeoTreeFloatNormal"] = { link = "FzfLuaBorder" }
 			hl["NeoTreeFloatBorder"] = { link = "FzfLuaBorder" }
 
 			-- Popup menu, item kind icon_text

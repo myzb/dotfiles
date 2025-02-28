@@ -3,6 +3,7 @@ return {
 	-- optional for icon support
 	dependencies = { "echasnovski/mini.nvim" },
 	cmd = "FzfLua",
+	enabled = false,
 	keys = {
 		-- Basic keymaps
 		{ "<Leader>sh", "<Cmd>FzfLua helptags<CR>", desc = "Search help" },
