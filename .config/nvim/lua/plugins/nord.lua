@@ -13,11 +13,13 @@ return {
 			hl["NeoTreeFloatNormal"] = { link = "FzfLuaBorder" }
 			hl["NeoTreeFloatBorder"] = { link = "FzfLuaBorder" }
 
+			-- Snacks
 			-- hl["SnacksPicker"] = { link = "BufferInactive" }
 			-- hl["SnacksPickerBorder"] = { link = "BufferInactive" }
 			hl["SnacksPickerPathHidden"] = { link = "@text.phpdoc" }
 			hl["SnacksPickerPathIgnore"] = { link = "@text.phpdoc" }
 			hl["SnacksPickerFile"] = { link = "@text" }
+			hl["SnacksIndentScope"] = { fg = "#4C566A" }
 
 			-- Popup menu, item kind icon_text
 			hl["PmenuKind"] = { fg = c.aurora.purple, bg = c.polar_night.bright }
