@@ -1,46 +1,36 @@
 return {
 	"folke/snacks.nvim",
-	-- enabled = false,
 	priority = 1000,
 	lazy = false,
-	---@type snacks.Config
 	opts = {
-		-- your configuration comes here
-		-- or leave it empty to use the default settings
-		-- refer to the configuration section below
 		bigfile = { enabled = true },
-		-- dashboard = { enabled = true },
 		explorer = {
 			enabled = true,
 		},
 		indent = { enabled = true, animate = { enabled = false } },
-		-- input = { enabled = true },
 		picker = {
 			enabled = true,
-			layout = {
-				layout = {
-					backdrop = false,
-					width = 0.9,
-					height = 0.9,
-				},
-			},
-			sources = {
-				explorer = {
+			-- modify premade layouts
+			layouts = {
+				default = {
 					layout = {
-						layout = {
-							width = 40,
-							height = 0,
-						},
+						width = 0.9,
+						height = 0.9,
+						backdrop = false,
 					},
 				},
 			},
 		},
-		-- notifier = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
-		-- scroll = { enabled = true },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
+		styles = {
+			scratch = {
+				-- backdrop = false,
+				wo = { winhighlight = "NormalFLoat:NormalFloat" },
+			},
+		},
 	},
 	keys = {
 		-- Top Pickers & Explorer
@@ -552,12 +542,12 @@ return {
 					.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
 					:map("<leader>uc")
 				Snacks.toggle.treesitter():map("<leader>uT")
-				Snacks.toggle
-					.option("background", { off = "light", on = "dark", name = "Dark Background" })
-					:map("<leader>ub")
+				-- Snacks.toggle
+				-- 	.option("background", { off = "light", on = "dark", name = "Dark Background" })
+				-- 	:map("<leader>ub")
 				Snacks.toggle.inlay_hints():map("<leader>uh")
-				Snacks.toggle.indent():map("<leader>ug")
-				Snacks.toggle.dim():map("<leader>uD")
+				-- Snacks.toggle.indent():map("<leader>ug")
+				-- Snacks.toggle.dim():map("<leader>uD")
 			end,
 		})
 	end,
