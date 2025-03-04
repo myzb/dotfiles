@@ -13,20 +13,19 @@ return {
 			hl["NeoTreeFloatNormal"] = { link = "FzfLuaBorder" }
 			hl["NeoTreeFloatBorder"] = { link = "FzfLuaBorder" }
 
-			-- Snacks
-			-- hl["SnacksPicker"] = { link = "BufferInactive" }
-			-- hl["SnacksPickerBorder"] = { link = "Pmenu" }
-			-- hl["SnacksPickerBoxBorder"] = { link = "BufferInactive" }
-			-- hl["SnacksPickerListBorder"] = { link = "BufferInactive" }
-			-- hl["SnacksPickerPreviewBorder"] = { link = "BufferInactive" }
-			-- hl["SnacksPickerPreviewBorder"] = { link = "BufferInactive" }
+			-- Snacks Picker
+			hl["SnacksPickerBorder"] = { fg = c.frost.ice, bg = c.polar_night.bright }
+			hl["SnacksPickerBoxBorder"] = { fg = c.snow_storm.origin, bg = c.polar_night.bright }
+			hl["SnacksPickerListBorder"] = { fg = c.snow_storm.origin, bg = c.polar_night.bright }
+			hl["SnacksPickerPreviewBorder"] = { fg = c.snow_storm.origin, bg = c.polar_night.bright }
 
+			-- Snacks Scratch
 			-- hl["SnacksScratchTitle"] = { link = "Normal" }
 			-- hl["SnacksScratchFooter"] = { link = "Normal" }
 			-- hl["SnacksScratchDesc"] = { link = "Normal" }
 			-- hl["SnacksScratchKey"] = { link = "Normal" }
 
-			-- Fix some texts
+			-- Snacks explorer texts (fixup)
 			hl["SnacksPickerPathHidden"] = { link = "@text.phpdoc" }
 			hl["SnacksPickerPathIgnore"] = { link = "@text.phpdoc" }
 			hl["SnacksPickerIconFile"] = { link = "@text" }
