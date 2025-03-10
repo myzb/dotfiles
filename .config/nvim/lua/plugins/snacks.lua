@@ -2,16 +2,20 @@ return {
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
-	-- enabled = false,
 	opts = {
 		bigfile = { enabled = true },
 		explorer = {
 			enabled = true,
 		},
-		indent = { enabled = true, animate = { enabled = false } },
+		indent = {
+			enabled = true,
+			indent = { char = "▎" },
+			scope = { char = "▎" },
+			animate = { enabled = false },
+		},
 		picker = {
 			enabled = true,
-			-- modify premade layouts
+			-- Modify premade layouts
 			layouts = {
 				default = {
 					layout = {
@@ -29,8 +33,11 @@ return {
 		words = { enabled = true },
 		styles = {
 			scratch = {
-				-- backdrop = false,
-				wo = { winhighlight = "NormalFLoat:NormalFloat" },
+				-- Mimic Snacks.picker
+				backdrop = false,
+				wo = {
+					winhighlight = "NormalFloat:SnacksInputNormal,FloatBorder:SnacksPickerBoxBorder",
+				},
 			},
 		},
 	},
