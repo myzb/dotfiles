@@ -37,6 +37,10 @@ return {
 				source_func = "omnifunc",
 				auto_setup = false, -- setup via "LspAttach"
 			},
+			window = {
+				info = { border = "none" },
+				signature = { border = "none" },
+			},
 		})
 
 		local imap_expr = function(lhs, rhs)

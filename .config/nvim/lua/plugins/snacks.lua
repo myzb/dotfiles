@@ -2,6 +2,7 @@ return {
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
+	-- enabled = false,
 	opts = {
 		bigfile = { enabled = true },
 		explorer = {
@@ -21,6 +22,7 @@ return {
 				},
 			},
 		},
+		input = { enabled = false },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		statuscolumn = { enabled = true },
@@ -427,13 +429,13 @@ return {
 			end,
 			desc = "Select Scratch Buffer",
 		},
-		{
-			"<leader>n",
-			function()
-				Snacks.notifier.show_history()
-			end,
-			desc = "Notification History",
-		},
+		-- {
+		-- 	"<leader>n",
+		-- 	function()
+		-- 		Snacks.notifier.show_history()
+		-- 	end,
+		-- 	desc = "Notification History",
+		-- },
 		{
 			"<leader>bd",
 			function()
@@ -463,13 +465,13 @@ return {
 		-- 	end,
 		-- 	desc = "Lazygit",
 		-- },
-		{
-			"<leader>un",
-			function()
-				Snacks.notifier.hide()
-			end,
-			desc = "Dismiss All Notifications",
-		},
+		-- {
+		-- 	"<leader>un",
+		-- 	function()
+		-- 		Snacks.notifier.hide()
+		-- 	end,
+		-- 	desc = "Dismiss All Notifications",
+		-- },
 		{
 			"<c-/>",
 			function()
@@ -548,6 +550,14 @@ return {
 				Snacks.toggle.inlay_hints():map("<leader>uh")
 				-- Snacks.toggle.indent():map("<leader>ug")
 				-- Snacks.toggle.dim():map("<leader>uD")
+				--
+
+				-- Disable Snacks.input for real
+				Snacks.input = function(...)
+					local opts, fn = ...
+					opts.prompt = opts.prompt .. ": "
+					return vim.ui.input(opts, fn)
+				end
 			end,
 		})
 	end,
