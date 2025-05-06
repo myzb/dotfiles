@@ -9,7 +9,7 @@ return {
 
 		-- Icon Support
 		require("mini.icons").setup()
-		MiniIcons.tweak_lsp_kind() -- add icon to completion menu
+		MiniIcons.tweak_lsp_kind() -- add 'kind icon' to completion menu
 		MiniIcons.mock_nvim_web_devicons() -- mock web_devicons plugin
 
 		-- Highlight certain patterns
@@ -43,31 +43,21 @@ return {
 			},
 		})
 
-		local imap_expr = function(lhs, rhs)
-			vim.keymap.set("i", lhs, rhs, { expr = true })
-		end
-
-		-- Keybind: Tab/S-Tab navigation in popup menus
-		imap_expr("<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
-		imap_expr("<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<C-d>"]])
-
-		-- Keybind: CR to confirm selection in popup menus
-		imap_expr("<CR>", function()
-			if vim.fn.pumvisible() ~= 0 then
-				local sel = vim.fn.complete_info()["selected"] ~= -1
-				return sel and "<C-y>" or "<C-y><CR>"
-			else
-				return mini_pairs.cr()
-			end
-		end)
-
 		-- Disable completion menu for snacks_picker
 		local f = function(args)
 			vim.b[args.buf].minicompletion_disable = true
 		end
 		vim.api.nvim_create_autocmd("Filetype", { pattern = "snacks_picker_input", callback = f })
 
-		-- Highlight trailing spaces
+		-- Multistep keymaps
+		local map_multistep = require("mini.keymap").map_multistep
+
+		map_multistep("i", "<Tab>", { "pmenu_next" })
+		map_multistep("i", "<S-Tab>", { "pmenu_prev" })
+		map_multistep("i", "<CR>", { "pmenu_accept", "minipairs_cr" })
+		map_multistep("i", "<BS>", { "minipairs_bs" })
+
+		-- Trailing spaces highlight
 		require("mini.trailspace").setup()
 	end,
 }

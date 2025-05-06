@@ -47,6 +47,8 @@ vim.g.netrw_mouse = 2
 vim.opt.fillchars:append("eob: ") -- do not show end-of-buffer tilde
 vim.opt.scrolloff = 10 -- number of lines to keep above/below cursor
 
+-- vim.opt.winborder = "none" -- set all 'float' borders to none
+
 -- AUTOGROUPS
 
 -- highlight when yaking (copying) text
