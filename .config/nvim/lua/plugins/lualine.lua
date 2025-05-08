@@ -1,6 +1,7 @@
 return {
 	-- Bottom statusline
 	"nvim-lualine/lualine.nvim",
+	dependencies = { "echasnovski/mini.nvim" }, -- icon support
 	event = "ColorScheme",
 	init = function()
 		vim.opt.showmode = false -- showmode is provided by lualine
@@ -23,7 +24,4 @@ return {
 			},
 		},
 	},
-	config = function(_, opts)
-		require("lualine").setup(opts)
-	end,
 }

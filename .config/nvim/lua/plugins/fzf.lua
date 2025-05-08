@@ -1,7 +1,6 @@
 return {
 	"ibhagwan/fzf-lua",
-	-- optional for icon support
-	dependencies = { "echasnovski/mini.nvim" },
+	dependencies = { "echasnovski/mini.nvim" }, -- icon support
 	cmd = "FzfLua",
 	enabled = false,
 	keys = {

@@ -40,7 +40,4 @@ return {
 			hl["PmenuKind"] = { fg = c.aurora.purple, bg = c.polar_night.bright }
 		end,
 	},
-	config = function(_, opts)
-		require("nord").setup(opts)
-	end,
 }

@@ -4,9 +4,6 @@ return {
 		cmd = "Copilot",
 		event = "InsertEnter",
 		opts = {},
-		config = function(_, opts)
-			require("copilot").setup(opts)
-		end,
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
@@ -19,8 +16,6 @@ return {
 		cond = function()
 			return vim.fn.executable("make") == 1
 		end,
-		opts = {
-			-- debug = true,
-		},
+		opts = {},
 	},
 }

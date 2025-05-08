@@ -9,7 +9,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
-			"RRethy/nvim-treesitter-endwise", -- autocomplete x -> end statements (lua, ruby, ...)
+			"RRethy/nvim-treesitter-endwise", -- autocomplete 'x {...} end' statements (lua, ruby, ...)
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		build = ":TSUpdate",

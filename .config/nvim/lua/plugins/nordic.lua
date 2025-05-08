@@ -16,7 +16,4 @@ return {
 			hl["PmenuKind"] = { fg = c.magenta.base, bg = c.black1 }
 		end,
 	},
-	config = function(_, opts)
-		require("nordic").setup(opts)
-	end,
 }
