@@ -4,9 +4,7 @@ return {
 	lazy = false,
 	opts = {
 		bigfile = { enabled = true },
-		explorer = {
-			enabled = true,
-		},
+		explorer = { enabled = true },
 		indent = {
 			enabled = true,
 			indent = { char = "▎" },

@@ -12,26 +12,29 @@ return {
 		},
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
-			servers = {
+			lsp_config = {
 				clangd = {
 					cmd = { "clangd", "--fallback-style=webkit" },
 				},
-				lua_ls = {},
-				pyright = {},
 			},
-			tools = {
-				prettier = {},
-				stylua = {},
-				isort = {},
-				black = {},
-				pylint = {},
+			ensure_installed = {
+				"clangd",
+				"lua_ls",
+				"pyright",
+			},
+			ensure_tool_installed = {
+				"prettier",
+				"stylua",
+				"isort",
+				"black",
+				"pylint",
 			},
 		},
 		config = function(_, opts)
 			-- Auto-install non-lsp tools
 			local mr = require("mason-registry")
 			mr.refresh(function()
-				for name, _ in pairs(opts.tools or {}) do
+				for name, _ in pairs(opts.ensure_tool_installed or {}) do
 					local p = mr.get_package(name)
 					if not p:is_installed() then
 						p:install()
@@ -43,12 +46,12 @@ return {
 			vim.lsp.config("*", { capabilities = MiniCompletion.get_lsp_capabilities() })
 
 			-- Lsp server specific configs
-			for name, conf in pairs(opts.servers or {}) do
+			for name, conf in pairs(opts.lsp_config or {}) do
 				vim.lsp.config(name, conf)
 			end
 
 			-- Auto-install/-enable lsp servers
-			local ensure_installed = vim.tbl_keys(opts.servers or {})
+			local ensure_installed = vim.tbl_keys(opts.ensure_installed or {})
 			require("mason").setup()
 			require("mason-lspconfig").setup({
 				automatic_enable = true,
