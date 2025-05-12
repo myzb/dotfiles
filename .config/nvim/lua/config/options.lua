@@ -16,8 +16,9 @@ vim.opt.relativenumber = true -- enable relative numbers
 vim.opt.cmdheight = 0 -- autoshow cmdline only when needed
 
 vim.opt.colorcolumn = "80" -- column at 80 chars
-vim.opt.listchars = { space = "·", tab = "╶─", trail = "·", nbsp = "␣" }
-vim.opt.list = false -- show/hide listchars
+-- vim.opt.listchars = { space = "·", tab = "╶─", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { space = " ", tab = "  ", trail = "·", nbsp = " " }
+vim.opt.list = true -- show/hide listchars
 
 vim.opt.ruler = false
 vim.opt.termguicolors = true
@@ -49,9 +50,7 @@ vim.opt.scrolloff = 10 -- number of lines to keep above/below cursor
 
 -- vim.opt.winborder = "none" -- set all 'float' borders to none
 
--- AUTOGROUPS
-
--- highlight when yaking (copying) text
+-- Highlight text when yaking
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),

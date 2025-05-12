@@ -1,6 +1,7 @@
 return {
 	-- Highlight word under cursor
 	"RRethy/vim-illuminate",
+	enabled = false, -- Snacks.words
 	opts = {
 		delay = 200,
 		large_file_cutoff = 2000,

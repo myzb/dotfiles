@@ -2,7 +2,7 @@ return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "echasnovski/mini.nvim" }, -- icon support
 	cmd = "FzfLua",
-	enabled = false,
+	enabled = false, -- Snacks.picker
 	keys = {
 		-- Basic keymaps
 		{ "<Leader>sh", "<Cmd>FzfLua helptags<CR>", desc = "Search help" },
@@ -24,16 +24,13 @@ return {
 		{ "<Leader>so", "<Cmd>FzfLua oldfiles cwd=" .. vim.uv.cwd() .. "<CR>", desc = "Search oldfiles (cwd)" },
 		{ "<Leader>sn", "<Cmd>FzfLua files cwd=" .. vim.fn.stdpath("config") .. "<CR>", desc = "Search neovim config" },
 	},
-	config = function(_, opts)
-		local fzf = require("fzf-lua")
-		fzf.setup({
-			"default-title",
-			winopts = {
-				backdrop = 100,
-			},
-			files = {
-				-- cwd_prompt = false,
-			},
-		})
-	end,
+	opts = {
+		"default-title",
+		winopts = {
+			backdrop = 100,
+		},
+		files = {
+			-- cwd_prompt = false,
+		},
+	},
 }
