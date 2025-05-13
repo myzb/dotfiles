@@ -31,6 +31,7 @@ return {
 			-- Picker (prompt)
 			hl["SnacksPickerTotals"] = { fg = c.aurora.green }
 			hl["SnacksPickerPrompt"] = { fg = c.frost.ice, bold = true }
+			hl["SnacksPickerMatch"] = { fg = c.frost.ice, bold = true }
 
 			-- Snacks Scratch (match picker)
 			hl["SnacksScratchDesc"] = { fg = c.frost.ice, bg = c.polar_night.bright }
