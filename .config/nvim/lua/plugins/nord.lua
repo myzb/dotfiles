@@ -24,7 +24,8 @@ return {
 			-- Snacks (picker text)
 			hl["SnacksPickerPathHidden"] = { link = "@text.phpdoc" }
 			hl["SnacksPickerPathIgnore"] = { link = "@text.phpdoc" }
-			-- hl["SnacksPickerPathIgnored"] = { link = "@text.phpdoc" }
+			hl["SnacksPickerPathIgnored"] = { link = "@text.phpdoc" }
+			-- hl["SnacksPickerPathUnselected"] = { link = "@text.phpdoc" }
 			-- hl["SnacksPickerGitStatusIgnored"] = { link = "@text.phpdoc" }
 			hl["SnacksPickerGitStatusUntracked"] = { link = "@text.phpdoc" }
 
