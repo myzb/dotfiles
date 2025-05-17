@@ -3,7 +3,7 @@
 ## Requirements
 ```
 pacman -S stow git
-``
+````
 
 ## Installing
 ```
