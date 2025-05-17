@@ -1,8 +1,8 @@
 [general]
-live_config_reload = true
 import = [
     "~/.config/alacritty/themes/themes/nord.toml"
 ]
+live_config_reload = true
 
 [bell]
 animation = "EaseOutExpo"
@@ -20,35 +20,13 @@ shape = "Block"
 [font]
 size = 11.25
 
-[font.bold]
-family = "JetBrainsMono Nerd Font"
-style = "Bold"
-
-[font.glyph_offset]
-x = 0
-y = 0
-
-[font.italic]
-family = "JetBrainsMono Nerd Font"
-
 [font.normal]
 family = "JetBrainsMono Nerd Font"
-style = "Regular"
-
-[font.offset]
-x = 0
-y = 0
 
 [mouse]
 hide_when_typing = true
-bindings = [
-    { mouse = "Middle", action = "PasteSelection" }
-]
-
-[terminal]
 
 [window]
-# decorations = "None"
 dynamic_title = true
 startup_mode = "Windowed"
 decorations_theme_variant = "Dark"
