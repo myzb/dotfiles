@@ -41,8 +41,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'				# case insensitive
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"				# ls-style autocomplete colors
 zstyle ':completion:*' menu no							# will use fzf menu
 zstyle ':completion::complete:*' gain-privileges 1				# enable for sudo cmds
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'		# fzf colors
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'	# fzf colors
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'		# colorize fzf-tab's preview with 'cd'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'	# colorize fzf-tab's preview with zoxide 'z'
+
 
 # History
 HISTFILE="$ZDOTDIR/.zhistory"		# history filepath
@@ -64,7 +65,7 @@ alias help=run-help
 
 # Shell integrations
 eval "$(fzf --zsh)"			# fzf in zsh
-eval "$(zoxide init --cmd cd zsh)"	# zoxide instead of cd
+eval "$(zoxide init --cmd cd zsh)"	# replace 'cd' with zoxide
 
 # Keybinds
 bindkey -e
