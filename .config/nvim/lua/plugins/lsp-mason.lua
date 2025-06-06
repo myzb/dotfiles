@@ -97,7 +97,6 @@ return {
 					map("<Leader>rn", vim.lsp.buf.rename, "Rename variable")
 					map("<Leader>ca", vim.lsp.buf.code_action, "Code action")
 					map("K", vim.lsp.buf.hover, "Hover documentation")
-					map("gD", vim.lsp.buf.declaration, "Goto declaration")
 					map("<Leader>ls", vim.lsp.buf.signature_help, "Show signature")
 				end,
 			})
