@@ -9,7 +9,17 @@ map("i", "<C-l>", "<Right>", { desc = "Right" })
 -- Other Keybinds
 map("n", "<Esc>", "<Cmd> nohlsearch <CR>", { desc = "Hide search highlight" })
 map("n", "<Leader>tr", "<Cmd> set relativenumber! <CR>", { desc = "Toggle relative line numbers" })
-map("n", "<Leader>tw", "<Cmd> set list! <CR>", { desc = "Toggle whitespace characters" })
+
+-- Toggle whitespace characters
+map("n", "<Leader>tw", function()
+	if string.find(vim.o.listchars, "space: ") then
+		vim.opt.listchars = { space = "·", tab = "╶─", trail = "·", nbsp = "␣" }
+		vim.opt.list = true
+	else
+		vim.opt.listchars = { space = " ", tab = "  ", trail = "·", nbsp = " " }
+		vim.opt.list = true
+	end
+end, { desc = "Toggle whitespaces" })
 
 -- Change indent tab size
 map("n", "<Leader>it", function()
