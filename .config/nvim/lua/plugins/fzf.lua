@@ -51,7 +51,7 @@ return {
 			backdrop = 100,
 		},
 		files = {
-			-- cwd_prompt = false,
+			cwd_prompt = false,
 		},
 	},
 }
