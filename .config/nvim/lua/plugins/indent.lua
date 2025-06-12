@@ -2,7 +2,6 @@ return {
 	{
 		-- Indentation line
 		"lukas-reineke/indent-blankline.nvim",
-		-- enabled = false, -- Snacks.indent
 		main = "ibl",
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {

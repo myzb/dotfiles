@@ -1,7 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
-	-- enabled = false, -- Snacks.explorer
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
@@ -28,7 +27,7 @@ return {
 			-- Do not shorten last segment
 			for idx = 1, #segments - 1 do
 				local segment = segments[idx]
-				segments[idx] = segment:sub(1, vim.startswith(segment, '.') and 2 or 1)
+				segments[idx] = segment:sub(1, vim.startswith(segment, ".") and 2 or 1)
 			end
 
 			return table.concat(segments, sep)
@@ -47,10 +46,10 @@ return {
 					end
 					return result
 				end,
-			}
+			},
 		}
-		opts.filesystem = vim.tbl_deep_extend('force', {}, filesystem, opts.filesystem or {})
+		opts.filesystem = vim.tbl_deep_extend("force", {}, filesystem, opts.filesystem or {})
 
-		require('neo-tree').setup(opts)
-	end
+		require("neo-tree").setup(opts)
+	end,
 }

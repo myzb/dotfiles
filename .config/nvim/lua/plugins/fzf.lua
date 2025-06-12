@@ -2,7 +2,6 @@ return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "echasnovski/mini.nvim" }, -- icon support
 	cmd = "FzfLua",
-	-- enabled = false, -- Snacks.picker
 	keys = {
 		-- stylua: ignore start
 		-- Basic keymaps
