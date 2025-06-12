@@ -4,10 +4,11 @@ return {
 	cmd = "FzfLua",
 	-- enabled = false, -- Snacks.picker
 	keys = {
+		-- stylua: ignore start
 		-- Basic keymaps
 		{ "<Leader>/", "<Cmd>FzfLua grep_curbuf<CR>", desc = "Search in current buffer" },
 		{ "<Leader><Leader>", "<Cmd>FzfLua buffers<CR>", desc = "Search open buffers" },
-		{ "<Leader>fz", "<Cmd>FzfLua builtin<CR>", desc = "FzfLua builtin"},
+		{ "<Leader>fz", "<Cmd>FzfLua builtin<CR>", desc = "FzfLua builtin" },
 		-- Search
 		{ "<Leader>sh", "<Cmd>FzfLua helptags<CR>", desc = "Search help" },
 		{ "<Leader>sk", "<Cmd>FzfLua keymaps<CR>", desc = "Search keymaps" },
@@ -42,7 +43,8 @@ return {
 		{ "<leader>gL", "<Cmd>FzfLua git_commits<CR>", desc = "Git workspace log" },
 		{ "<leader>gl", "<Cmd>FzfLua git_bcommits<CR>", desc = "Git document log" },
 		{ "<leader>gB", "<Cmd>FzfLua git_blame<CR>", desc = "Git blame" },
-		{ "<leader>gu", "<Cmd>FzfLua git_files cmd='git diff --name-only --diff-filter=U --relative'<CR>", desc="Git unmerged" }
+		{ "<leader>gu", "<Cmd>FzfLua git_files cmd='git diff --name-only --diff-filter=U --relative'<CR>", desc = "Git unmerged" },
+		-- stylua: ignore end
 	},
 	opts = {
 		"default-title",
