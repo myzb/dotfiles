@@ -9,8 +9,9 @@ return {
 			hl["WhichKeyNormal"] = { link = "Pmenu" }
 
 			-- Popups with borders
-			hl["NeoTreeFloatNormal"] = { link = "FzfLuaBorder" }
-			hl["NeoTreeFloatBorder"] = { link = "FzfLuaBorder" }
+			hl["NeoTreeFloatNormal"] = { fg = c.polar_night.light, bg = c.polar_night.origin }
+			hl["NeoTreeFloatBorder"] = { fg = c.polar_night.light, bg = c.polar_night.origin }
+			hl["NeoTreeRootName"] = { fg = c.frost.artic_water, bold = true }
 
 			-- Snacks
 			hl["SnacksIndentScope"] = { fg = "#4C566A" }
