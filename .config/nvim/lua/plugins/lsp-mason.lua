@@ -18,16 +18,23 @@ return {
 				},
 			},
 			ensure_installed = {
+				-- lsp
 				"clangd",
 				"lua_ls",
 				"pyright",
 			},
 			ensure_tool_installed = {
+				-- formatter
 				"prettier",
 				"stylua",
 				"isort",
 				"black",
 				"pylint",
+				-- linter
+				"vale",
+				"jsonlint",
+				"yamllint",
+				"hadolint",
 			},
 		},
 		config = function(_, opts)
