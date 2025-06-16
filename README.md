@@ -28,3 +28,8 @@ pacman -S neovim ttf-jetbrains-mono-nerd fd ripgrep npm
 ```
 pacman -S tmux inetutils
 ```
+
+### alacritty
+```
+pacman - S alacritty
+```
