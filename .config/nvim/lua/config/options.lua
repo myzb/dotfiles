@@ -1,11 +1,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.opt.expandtab = true
-vim.opt.tabstop = 8
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
---vim.opt.smarttab = true
+vim.opt.expandtab = true -- expand real tabs to spaces
+vim.opt.shiftwidth = 4 -- spaces that correspond to an indent level
+vim.opt.softtabstop = -1 -- spaces a tab key-press will insert (-1 = same as shiftwidth)
+vim.opt.tabstop = 8 -- spaces a real tab character corresponds to
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true -- highlight line the cursor is at
@@ -16,8 +15,7 @@ vim.opt.relativenumber = true -- enable relative numbers
 vim.opt.cmdheight = 0 -- autoshow cmdline only when needed
 
 vim.opt.colorcolumn = "80" -- column at 80 chars
--- vim.opt.listchars = { space = "·", tab = "╶─", trail = "·", nbsp = "␣" }
-vim.opt.listchars = { space = " ", tab = "  ", trail = "·", nbsp = " " }
+vim.opt.listchars = { space = " ", tab = "  ", trail = "·", nbsp = " " } --only show trailing
 vim.opt.list = true -- show/hide listchars
 
 vim.opt.ruler = false

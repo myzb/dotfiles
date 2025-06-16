@@ -25,8 +25,8 @@ end, { desc = "Toggle whitespaces" })
 map("n", "<Leader>it", function()
 	vim.ui.input({ prompt = "Indent tab to: " }, function(input)
 		vim.opt.tabstop = tonumber(input)
-		vim.opt.softtabstop = tonumber(input)
-		vim.opt.shiftwidth = tonumber(input)
+		vim.opt.softtabstop = -1
+		vim.opt.shiftwidth = 0
 		vim.opt.expandtab = false
 	end)
 end, { desc = "Indent tabs" })
@@ -35,8 +35,8 @@ end, { desc = "Indent tabs" })
 map("n", "<Leader>is", function()
 	vim.ui.input({ prompt = "Indent space to: " }, function(input)
 		vim.opt.tabstop = 8
-		vim.opt.softtabstop = tonumber(input)
-		vim.opt.shiftwidth = tonumber(input)
+		vim.opt.softtabstop = -1
+		vim.opt.shiftwidth = 4
 		vim.opt.expandtab = true
 	end)
 end, { desc = "Indent spaces" })
@@ -45,8 +45,8 @@ end, { desc = "Indent spaces" })
 map("n", "<Leader>im", function()
 	vim.ui.input({ prompt = "Indent mixed to: " }, function(input)
 		vim.opt.tabstop = 8
-		vim.opt.softtabstop = tonumber(input)
-		vim.opt.shiftwidth = tonumber(input)
+		vim.opt.softtabstop = -1
+		vim.opt.shiftwidth = 4
 		vim.opt.expandtab = false
 	end)
 end, { desc = "Indent mixed" })
