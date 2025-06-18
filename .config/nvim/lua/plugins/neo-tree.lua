@@ -14,6 +14,11 @@ return {
 				visible = false,
 			},
 		},
+		default_component_configs = {
+			symlink_target = {
+				enabled = false,
+			},
+		},
 	},
 	config = function(_, opts)
 		local function shorten_path(path, sep)
