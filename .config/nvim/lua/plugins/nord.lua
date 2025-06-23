@@ -1,6 +1,7 @@
 return {
 	"gbprod/nord.nvim",
-	lazy = true,
+	lazy = false, -- don't lazy load main theme
+	priority = 1000,
 	opts = {
 		on_highlights = function(hl, c)
 			-- Popups without borders

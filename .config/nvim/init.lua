@@ -1,5 +1,5 @@
 -- plugin manager
 require("config.lazy")
 
--- load the theme
+-- load main theme
 vim.cmd.colorscheme("nord")
