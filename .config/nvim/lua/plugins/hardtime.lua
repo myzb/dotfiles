@@ -13,7 +13,13 @@ return {
 			"rcarriga/nvim-notify",
 		},
 		keys = {
-			{ "<Leader>H", function() require("hardtime").toggle() end, desc = "Hardtime", },
+			{
+				"<Leader>H",
+				function()
+					require("hardtime").toggle()
+				end,
+				desc = "Hardtime",
+			},
 		},
 		opts = {
 			enabled = true,
@@ -26,7 +32,7 @@ return {
 				["<Right>"] = false,
 			},
 			callback = function(text)
-				require("notify")(text,	vim.log.levels.WARN, { title = "Hardtime", timeout = 3000 })
+				require("notify")(text, vim.log.levels.WARN, { title = "Hardtime", timeout = 3000 })
 			end,
 		},
 		config = function(_, opts)

@@ -97,7 +97,9 @@ return {
 					vim.bo[args.buf].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"
 
 					-- Keymap helper
-					local function map(k, f, d) vim.keymap.set("n", k, f, { buffer = args.buf, desc = d }) end
+					local function map(k, f, d)
+						vim.keymap.set("n", k, f, { buffer = args.buf, desc = d })
+					end
 
 					map("<Leader>rn", vim.lsp.buf.rename, "Rename variable")
 					map("<Leader>ca", vim.lsp.buf.code_action, "Code action")
