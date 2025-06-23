@@ -21,7 +21,7 @@ pacman -S zsh zoxide fzf man
 
 ### neovim
 ```
-pacman -S neovim ttf-jetbrains-mono-nerd fd ripgrep npm
+pacman -S neovim ttf-jetbrains-mono-nerd fd ripgrep npm tree-sitter-cli
 ```
 
 ### tmux
