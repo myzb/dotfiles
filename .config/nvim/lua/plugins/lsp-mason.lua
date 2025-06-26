@@ -12,11 +12,7 @@ return {
 		},
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
-			lsp_config = {
-				clangd = {
-					cmd = { "clangd", "--fallback-style=webkit" },
-				},
-			},
+			lsp_config = {},
 			ensure_installed = {
 				-- lsp
 				"clangd",
