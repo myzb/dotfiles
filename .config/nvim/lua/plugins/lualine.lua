@@ -10,6 +10,22 @@ return {
 	opts = {
 		extensions = { "neo-tree" },
 		sections = {
+			lualine_b = {
+				{
+					"branch",
+					icon = "",
+				},
+				"diff",
+				{
+					"diagnostics",
+					symbols = {
+						error = " ",
+						warn = " ",
+						info = " ",
+						hint = " ",
+					},
+				},
+			},
 			lualine_c = {
 				{
 					"filename",
@@ -20,7 +36,16 @@ return {
 			},
 			lualine_x = {
 				"encoding",
-				"filetype",
+				{
+					"filetype",
+					colored = false,
+				},
+			},
+			lualine_y = {
+				{
+					"progress",
+					icon = " ",
+				},
 			},
 		},
 	},
