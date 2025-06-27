@@ -1,8 +1,11 @@
 return {
 	"gbprod/nord.nvim",
-	lazy = false, -- don't lazy load main theme
+	lazy = false, -- don't lazy load main themes
 	priority = 1000,
 	opts = {
+		on_colors = function(c)
+			c.polar_night.dark = "#2a2e3b" -- new color, darker than .origin
+		end,
 		on_highlights = function(hl, c)
 			-- Popups without borders
 			hl["NormalFloat"] = { link = "Pmenu" }
@@ -18,4 +21,8 @@ return {
 			hl["PmenuKind"] = { fg = c.aurora.purple, bg = c.polar_night.bright }
 		end,
 	},
+	config = function(_, opts)
+		require("nord").setup(opts)
+		vim.cmd([[colorscheme nord]])
+	end,
 }
