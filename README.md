@@ -31,5 +31,5 @@ pacman -S tmux inetutils
 
 ### alacritty
 ```
-pacman - S alacritty
+pacman -S alacritty
 ```
