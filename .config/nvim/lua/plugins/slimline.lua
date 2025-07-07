@@ -2,6 +2,7 @@ return {
 	"sschleemilch/slimline.nvim",
 	init = function()
 		vim.opt.laststatus = 3 -- have a single global statusline
+		vim.opt.cmdheight = 0 -- autoshow cmdline only when needed
 	end,
 	opts = {
 		style = "fg",
