@@ -18,19 +18,21 @@ return {
 				"clangd",
 				"lua_ls",
 				"pyright",
+				"rust-analyzer",
+				"zls",
 			},
 			ensure_tool_installed = {
 				-- formatter
-				"prettier",
-				"stylua",
-				"isort",
 				"black",
+				"isort",
+				"prettier",
 				"pylint",
+				"stylua",
 				-- linter
-				"vale",
-				"jsonlint",
-				"yamllint",
 				"hadolint",
+				"jsonlint",
+				"vale",
+				"yamllint",
 			},
 		},
 		config = function(_, opts)
