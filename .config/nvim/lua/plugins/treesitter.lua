@@ -9,15 +9,19 @@ return {
 		build = ":TSUpdate",
 		opts = {
 			ensure_installed = {
-				-- Default needed
+				"bash",
 				"c",
-				-- "diff",
+				"dockerfile",
+				"json",
 				"lua",
-				-- "markdown",
-				-- "markdown_inline",
-				-- "vim",
-				-- "vimdoc",
-				-- "query",
+				"make",
+				"markdown",
+				"python",
+				"rust",
+				"toml",
+				"vim",
+				"yaml",
+				"zig",
 			},
 			-- endwise = { enable = true },
 			-- incremental_selection = {
