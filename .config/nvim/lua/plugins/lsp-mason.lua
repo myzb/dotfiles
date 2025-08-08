@@ -18,7 +18,7 @@ return {
 				"clangd",
 				"lua_ls",
 				"pyright",
-				"rust-analyzer",
+				"rust_analyzer",
 				"zls",
 			},
 			ensure_tool_installed = {
