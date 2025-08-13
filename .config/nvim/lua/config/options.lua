@@ -31,7 +31,7 @@ vim.opt.wrap = false
 vim.opt.linebreak = true
 vim.opt.scrolloff = 10 -- min number of screen lines to keep above cursor when scrolling
 
-vim.opt.shortmess:append("I") -- disable welcome message
+vim.opt.shortmess:append("Ic") -- disable "I" welcome, "c" completion message(s)
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
