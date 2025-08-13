@@ -36,7 +36,7 @@ map("n", "<Leader>is", function()
 	vim.ui.input({ prompt = "Indent space to: " }, function(input)
 		vim.opt.tabstop = 8
 		vim.opt.softtabstop = -1
-		vim.opt.shiftwidth = 4
+		vim.opt.shiftwidth = tonumber(input)
 		vim.opt.expandtab = true
 	end)
 end, { desc = "Indent spaces" })
@@ -46,7 +46,7 @@ map("n", "<Leader>im", function()
 	vim.ui.input({ prompt = "Indent mixed to: " }, function(input)
 		vim.opt.tabstop = 8
 		vim.opt.softtabstop = -1
-		vim.opt.shiftwidth = 4
+		vim.opt.shiftwidth = tonumber(input)
 		vim.opt.expandtab = false
 	end)
 end, { desc = "Indent mixed" })
