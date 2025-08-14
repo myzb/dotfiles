@@ -21,10 +21,6 @@ return {
 			},
 			left = "",
 			right = "",
-			-- left = "",
-			-- right = "",
-			-- left = "",
-			-- right = "",
 		},
 		components = {
 			right = {
