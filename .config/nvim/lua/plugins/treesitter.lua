@@ -1,9 +1,6 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			-- "RRethy/nvim-treesitter-endwise", -- autocomplete 'x {...} end' statements (e.g. lua)
-		},
 		lazy = false, -- does not support lazy loading
 		branch = "main",
 		build = ":TSUpdate",
@@ -23,16 +20,6 @@ return {
 				"yaml",
 				"zig",
 			},
-			-- endwise = { enable = true },
-			-- incremental_selection = {
-			-- 	enable = true,
-			-- 	keymaps = {
-			-- 		init_selection = "<tab>",
-			-- 		node_incremental = "<tab>",
-			-- 		scope_incremental = false,
-			-- 		node_decremental = "<bs>",
-			-- 	},
-			-- },
 		},
 		config = function(_, opts)
 			-- Neovim builtin treesitter provides some builtin parsers, install extra
@@ -261,5 +248,9 @@ return {
 				silent = true,
 			},
 		},
+	},
+	{
+		-- autocomplete 'x {...} end' statements (e.g. lua)
+		"tpope/vim-endwise",
 	},
 }
