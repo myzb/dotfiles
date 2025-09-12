@@ -2,16 +2,16 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
 fi
 
 # Plugin Manager
@@ -43,7 +43,7 @@ zstyle ':completion:*' menu no							# will use fzf menu
 zstyle ':completion::complete:*' gain-privileges 1				# enable for sudo cmds
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'		# colorize fzf-tab's preview with 'cd'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'	# colorize fzf-tab's preview with zoxide 'z'
-
+zstyle ':fzf-tab:*' fzf-flags '--color=spinner:green,pointer:red,prompt:magenta,hl:blue' # fzf colors
 
 # History
 HISTFILE="$ZDOTDIR/.zhistory"		# history filepath

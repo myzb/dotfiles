@@ -1,6 +1,6 @@
 [general]
 import = [
-    "themes/nord.toml"
+    "themes/nvim.toml"
 ]
 live_config_reload = true
 

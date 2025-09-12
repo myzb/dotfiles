@@ -11,12 +11,19 @@ git clone https://github.com/myzb/dotfiles.git
 cd dotfiles
 stow -t ~/ .
 ```
-
-## Setup
+### alacritty
+```
+pacman -S alacritty
+```
 
 ### zsh
 ```
 pacman -S zsh zoxide fzf man
+```
+
+### tmux
+```
+pacman -S tmux
 ```
 
 ### neovim
@@ -24,12 +31,13 @@ pacman -S zsh zoxide fzf man
 pacman -S neovim ttf-jetbrains-mono-nerd fd ripgrep npm tree-sitter-cli
 ```
 
-### tmux
-```
-pacman -S tmux inetutils
-```
+#### Setup
 
-### alacritty
+Treesitter parsers
 ```
-pacman -S alacritty
+:TSInstall lua vim vimdoc c markdown markdown_inline rst make cmake
+```
+Language servers
+```
+:MasonInstall lua-language-server cmake-language-server clangd
 ```
