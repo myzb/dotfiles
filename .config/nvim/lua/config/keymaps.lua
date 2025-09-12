@@ -1,12 +1,6 @@
 local map = vim.keymap.set
 
--- Navigate within insert mode
-map("i", "<C-k>", "<Up>", { desc = "Up" })
-map("i", "<C-j>", "<Down>", { desc = "Down" })
-map("i", "<C-h>", "<Left>", { desc = "Left" })
-map("i", "<C-l>", "<Right>", { desc = "Right" })
-
--- Other Keybinds
+-- Keybinds
 map("n", "<Esc>", "<Cmd> nohlsearch <CR>", { desc = "Hide search highlight" })
 map("n", "<Leader>tr", "<Cmd> set relativenumber! <CR>", { desc = "Toggle relative line numbers" })
 
