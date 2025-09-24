@@ -1,6 +1,6 @@
 return {
 	"ibhagwan/fzf-lua",
-	dependencies = { "echasnovski/mini.nvim" }, -- icon support
+	dependencies = { "nvim-mini/mini.nvim" }, -- icon support
 	cmd = "FzfLua",
 	keys = {
 		-- stylua: ignore start

@@ -1,5 +1,5 @@
 return {
-	"echasnovski/mini.nvim",
+	"nvim-mini/mini.nvim",
 	config = function()
 		-- Better Around/Inside textobjects
 		require("mini.ai").setup({ n_lines = 500 })
