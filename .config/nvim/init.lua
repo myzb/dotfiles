@@ -95,7 +95,7 @@ MiniPick.registry.all_files = function()
 end
 
 -- Text editing (around/inside textobjects, autopairs, surround chars)
-require("mini.ai").setup({ n_lines = 500 })
+require("mini.ai").setup()
 require("mini.pairs").setup()
 require("mini.surround").setup()
 
@@ -115,12 +115,20 @@ map_multistep("i", "<S-Tab>", { "pmenu_prev", "vimsnippet_prev" })
 map_multistep("i", "<CR>", { "pmenu_accept", "minipairs_cr" })
 map_multistep("i", "<BS>", { "minipairs_bs" })
 
--- Tool installer/management (Lsp, formatter, linter, etc.)
+-- Tool installer/management (lsp, formatter, linter, etc.)
 require("mason").setup()
+local ls = {}
+local mr = require("mason-registry")
+for _, name in ipairs(mr.get_installed_package_names()) do
+	local spec = mr.get_package(name).spec
+	if spec and spec.neovim then
+		table.insert(ls, spec.neovim.lspconfig)
+	end
+end
 
--- Lsp setup
+-- Lsp setup (auto-enable from mason)
 vim.lsp.config("*", { capabilities = MiniCompletion.get_lsp_capabilities() })
-vim.lsp.enable({ "lua_ls", "rust_analyzer", "clangd", "zls", "pyright", "cmake" })
+vim.lsp.enable(ls)
 
 vim.diagnostic.config({
 	virtual_text = false,
